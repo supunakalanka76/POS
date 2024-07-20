@@ -12,6 +12,11 @@ function Navbar() {
     event.currentTarget.classList.add('active');
   }
 
+  function toggle() {
+    const navbar = document.getElementsByClassName('navbar')[0];
+    navbar.classList.toggle('ToggleActive');
+  }
+
 
   return (
     <div className='navbar'>
@@ -20,7 +25,7 @@ function Navbar() {
 
         <div className='navbar-header-image'>
             <img src={logo} alt="" width='60px'/>
-            <span className="material-icons toggle-icon">arrow_forward_ios</span>
+            <span className="material-icons toggle-icon" onClick={toggle}>arrow_forward_ios</span>
         </div>
 
         <div className='navbar-header-text'>
