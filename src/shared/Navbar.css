@@ -52,11 +52,11 @@
     padding: 1rem;
     width: 250px;
     box-shadow: var(--box-shadow);
+    transition: all 300ms ease-in;
 }
 
 .navbar.ToggleActive {
     width: 100px;
-
 }
 
 .navbar-header {
@@ -66,7 +66,7 @@
 }
 
 .navbar-header-text h2 {
-    font-size: 30px;
+    font-size: 25px;
     color: black;
     text-align: center;
     padding-top: 1rem;
@@ -91,6 +91,9 @@
     cursor: pointer;
 }
 
+.toggle-icon.ToggleActive {
+    rotate: 180deg;
+}
 
 .navbar-buttons {
     margin-top: 0.5rem;
@@ -103,6 +106,11 @@
     gap: 2rem;
     padding: 0.5rem;
     margin: 0.9rem 0;
+}
+
+.Na.ToggleActive{
+    display: flex;
+    justify-content: center;
 }
 
 .navbar-buttons a:hover {
@@ -135,10 +143,23 @@
     border-radius: 15px;
 }
 
+.line {
+    margin-top: 2rem;
+    border-bottom: 2px solid var(--color-dark);
+    width: 100%;
+}
+
 .navbar-profile {
     display: grid;
     grid-template-columns: 10% 80% 10%;
     align-items: center;
     justify-items: center;
     padding-top: 0.5rem;
+    transition: all 300ms ease-in;
+}
+
+.navbar-profile.ToggleActive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
