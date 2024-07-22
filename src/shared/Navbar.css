@@ -66,10 +66,10 @@
 }
 
 .navbar-header-text {
-    font-size: 15px;
+    font-size: 18px;
     color: black;
     text-align: center;
-    padding-top: 1rem;
+    padding-bottom: 1rem;
     display: flex;
     align-items: center;
 }
@@ -79,7 +79,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 32%;
+    top: 15%;
     right: -45px;
     height: 30px;
     width: 30px;
