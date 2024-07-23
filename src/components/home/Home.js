@@ -6,8 +6,8 @@ function Home() {
   return (
     <div className='home'> 
       <div className='search-bar'>
-      <span class="material-icons-outlined search">search</span>
-        <input className='search-Bar' id='search' palceholder='Search Here....' list='items'/>
+      <span className="material-icons-outlined search">search</span>
+        <input className='search-Bar' id='search' placeholder='Search Here...' list='items' />
           <datalist class='items'>
             <option value='Electronics'></option>
             <option value='Clothing'></option>
@@ -17,8 +17,13 @@ function Home() {
             <option value='Stationery'></option>
             <option value='Miscellaneous'></option>
           </datalist>
+
+          <div className='category'>
+        <button className="btn-category">Category</button>
+      </div>
       </div>
     </div>
+
   )
 }
 
