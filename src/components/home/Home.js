@@ -22,6 +22,7 @@ function Home() {
         <button className="btn-category">Category</button>
       </div>
       </div>
+      
     </div>
 
   )
