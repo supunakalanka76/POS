@@ -33,8 +33,8 @@
 }
 
 .category {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 17%;
     justify-content: right;
     margin: -11%;
     margin-right: -25%;
@@ -42,6 +42,7 @@
 }
 
 .btn-category {
+    justify-content: center;
     font-size: 16px;
     font-weight: bold;
     color: white;
