@@ -35,10 +35,13 @@
 
 }
 
-.search {
-    margin-top: 7px;
-    margin-right: 1px;
-    margin-left: 1px;
+.search-icon {
+    position: relative;
+    transform: translateY(25%);
+    left: 35px;
+    bottom: 153px;
+    padding-top: 0.1rem;
+    padding-right: 0.1rem;
 }
 
 .category {

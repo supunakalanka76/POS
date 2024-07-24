@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className='home'> 
       <div className='search-bar'>
-      <span className="material-icons-outlined search">search</span>
+      <span className="material-icons-outlined search-icon">search</span>
         <input className='search-Bar' id='product' placeholder='Search Here...' list='items' />
           <datalist id='items'>
             <option value='Electronics'/>
