@@ -7,7 +7,7 @@ import profile from '../images/profile.png';
 
 function Navbar() {
   function activeButtonHandle (event) {
-    const buttons = document.querySelectorAll('.navbar-button'); {/*all anchor tags save to the const button*/}
+    const buttons = document.querySelectorAll('.navbar-button');
     buttons.forEach (link => link.classList.remove('active'));
     event.currentTarget.classList.add('active');
   }
@@ -46,13 +46,14 @@ function Navbar() {
 
         <div className='navbar-header-image'>
             <img src={logo} alt="" width='60px'/>
-            <span className="material-icons toggle-icon" onClick={toggle}>arrow_back_ios</span>
         </div>
 
         <div className='navbar-header-text'>
             <h2 className='navButton'>The POS</h2>
         </div>
+        
       </div>
+      <span className="material-icons toggle-icon" onClick={toggle}>arrow_back_ios</span>
 
       <div className='navbar-buttons'>
 
