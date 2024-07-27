@@ -17,6 +17,7 @@ function Home() {
       </div>
       <div className='table1'>
         <table className='product-table1'>
+          <thead>
           <tr>
             <th>Product Id</th>
             <th>Product Name</th>
@@ -24,6 +25,9 @@ function Home() {
             <th>Unit Price</th>
             <th>Action</th>
           </tr>
+          </thead>
+
+          <tbody>
           <tr>
             <td>1</td>
             <td>Product 1</td>
@@ -31,6 +35,8 @@ function Home() {
             <td>Rs. 100</td>
             <td><span className='material-icons delete-btn'>delete</span></td>
           </tr>
+          </tbody>
+          
           <tr>
             <td>2</td>
             <td>Product 2</td>
@@ -66,6 +72,34 @@ function Home() {
             <td>Rs. 600</td>
             <td><span className='material-icons delete-btn'>delete</span></td>
           </tr>
+          <tr>
+            <td>7</td>
+            <td>Product 7</td>
+            <td>180</td>
+            <td>Rs. 700</td>
+            <td><span className='material-icons delete-btn'>delete</span></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Product 8</td>
+            <td>200</td>
+            <td>Rs. 800</td>
+            <td><span className='material-icons delete-btn'>delete</span></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Product 9</td>
+            <td>250</td>
+            <td>Rs. 900</td>
+            <td><span className='material-icons delete-btn'>delete</span></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Product 10</td>
+            <td>300</td>
+            <td>Rs. 1000</td>
+            <td><span className='material-icons delete-btn'>delete</span></td>
+          </tr>
         </table>
       </div>
       <div className='payment'>
@@ -89,10 +123,15 @@ function Home() {
           </div>
         </div>
         <div className='payment-footer'>
-          <div>
-            Total: <span className=''>Total</span>
+          <div className='place-pay'>
+            <h2>Total:  Rs. </h2><br/>
+            <h2>Tax:  Rs. </h2><br/>
+            <h2>Discount:  Rs. </h2><br/>
+            <div className='sub'>
+              <h2>Subtotal:  Rs. </h2>
+              </div>
           </div>
-          <div>
+          <div className='pay'>
             <button className='btn-payment'>Payment</button>
           </div>
         </div>
