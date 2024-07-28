@@ -142,10 +142,6 @@ tr:nth-child(even) {
     background-color: #D9D9D9;
 }
 
-tr:nth-child(odd) {
-    background-color: rgb(147, 146, 146);
-}
-
 .product-table1 {
     border-collapse: collapse;
 }
