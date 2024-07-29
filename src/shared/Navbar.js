@@ -54,7 +54,7 @@ function Navbar() {
         </div>
         
       </div>
-      <span className="material-icons toggle-icon" onClick={toggle}>arrow_back_ios</span>
+      <span className="material-icons toggle-icon" onClick={toggle}>arrow_back</span>
 
       <div className='navbar-buttons'>
 
