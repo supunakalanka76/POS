@@ -1,0 +1,263 @@
+/* root-variables */
+
+:root {
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: rgba(132,139,200,0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+  
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+  
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+  
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+  
+  .dark-theme-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --color-shadow: 0 2rem 3rem var(--color-light);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+.home{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    width: 100%;
+}
+
+/* search bar */
+
+/* sampurna search bar eka */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 1rem;
+}
+
+
+/* search bar eka athule */
+.search-Bar {
+    border: 2px solid black;
+    background-color: #D9D9D9;
+    height: 40px;
+    border-radius: 30px;
+    margin-left: 10px;
+    padding-top: 5px;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.search-Bar input {
+    flex: 1;
+    height: 35px;
+    width: 38rem;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    color: black;
+    padding-left: 30px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+}
+
+.btn-category {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: blue;
+    color: white;
+    border-radius: 15px;
+    border: 2px solid;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Table CSS */
+.table1 {
+    position: absolute;
+    z-index: 2;
+    top: 180px;
+    padding-left: 20px;
+    overflow: scroll;
+    height: 350px;
+}
+
+.product-table1 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.product-table1 thead th, .product-table1 tbody td {
+    
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 45px;
+}
+
+.product-table1 thead th {
+    background-color: darkblue;
+    color: white;
+}
+
+.product-table1 tbody tr:nth-child(even) {
+    background-color: #D9D9D9;
+}
+
+.product-table1 tbody th:nth-child(even) {
+    background-color: #896f6f;
+}
+
+.delete-btn {
+    color: red;
+    cursor: pointer;
+    padding-left: 25px;
+}
+
+/* Payment Section  */
+
+.payment {
+    display: grid;
+    grid-template-rows: 27% 33% 46%;
+    justify-content: center;
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+
+}
+
+.payment-header {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    justify-content: space-between;
+    border: 1px solid ,darkblue solid;
+    /* border-radius: 10px; */
+    width: 385px;
+    height: 125px;
+    padding: 1rem;
+    background-color: darkblue;
+    color: white;
+}
+
+.local-mall {
+    color: white;
+    top: 120px;
+    position: absolute;
+    padding-left: 21rem;
+    font-size: 50px;
+}
+
+.payment-list {
+    display: grid;
+    grid-template-rows:40% 20% 40%;
+    justify-content: space-between;
+    border: 0px solid;
+    /* border-radius: 10px; */
+    padding: 0.5rem;
+    padding-left: 30px;
+    /* overflow: scroll; */
+    background-color: darkgray;
+}
+
+.p1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 20px;
+    padding: 6px;
+    width: 300px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.payment-footer {
+    display: grid;
+    grid-template-rows: 40% 50% 10%;
+    justify-content: left;
+    border: 0.5px solid ;
+    /* border-radius: 10px; */
+    background-color: darkblue;
+    color: white;
+}
+
+.place-pay {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    color: white;
+    padding-left: 10px;
+    font-size: 10px;
+    padding: 1rem;
+    height: 200px;
+
+}
+
+.sub {
+    color: red;
+    font-size: 14px;
+}
+
+.pay {
+    color: white;
+    padding-left: 5rem;
+    padding-top: 2rem;
+    font-size: 14px;
+}
+
+.btn-payment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: darkgreen;
+    border: none;
+    border-radius: 15px;
+    padding: 1rem;
+
+    
+}

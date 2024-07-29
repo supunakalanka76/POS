@@ -4,10 +4,11 @@ import './Navbar.css';
 import 'material-icons/iconfont/material-icons.css';
 import logo from '../images/logo.png';
 import profile from '../images/profile.png';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   function activeButtonHandle (event) {
-    const buttons = document.querySelectorAll('.navbar-button'); {/*all anchor tags save to the const button*/}
+    const buttons = document.querySelectorAll('.navbar-button');
     buttons.forEach (link => link.classList.remove('active'));
     event.currentTarget.classList.add('active');
   }
@@ -46,58 +47,59 @@ function Navbar() {
 
         <div className='navbar-header-image'>
             <img src={logo} alt="" width='60px'/>
-            <span className="material-icons toggle-icon" onClick={toggle}>arrow_back_ios</span>
         </div>
 
         <div className='navbar-header-text'>
             <h2 className='navButton'>The POS</h2>
         </div>
+        
       </div>
+      <span className="material-icons toggle-icon" onClick={toggle}>arrow_back</span>
 
       <div className='navbar-buttons'>
 
-        <a href="#" className='navbar-button active Na' onClick={activeButtonHandle} >
+        <Link to='/' className='navbar-button active Na' onClick={activeButtonHandle} >
             <span className="material-icons">home</span>
             <h3 className="navButton">Home</h3>
-        </a>  {/* home */}
+        </Link>  {/* home */}
 
-        <a href="#" className='navbar-button Na' onClick={activeButtonHandle}>
+        <Link to='/sales' className='navbar-button Na' onClick={activeButtonHandle}>
             <span className="material-icons">storefront</span>
             <h3 className='navButton'>Sales</h3>
-        </a>  {/* sales */}
+        </Link>  {/* sales */}
 
-        <a href="#" className='navbar-button Na' onClick={activeButtonHandle}>
+        <Link to='/inventory' className='navbar-button Na' onClick={activeButtonHandle}>
             <span className="material-icons">inventory</span>
             <h3 className='navButton'>Inventory</h3>
-        </a>  {/* inventory */}
+        </Link>  {/* inventory */}
 
-        <a href="#" className='navbar-button Na' onClick={activeButtonHandle}>
+        <Link to='products' className='navbar-button Na' onClick={activeButtonHandle}>
             <span className="material-icons">store</span>
             <h3 className='navButton'>Products</h3>
-        </a>  {/* products */}
+        </Link>  {/* products */}
 
-        <a href="#" className='navbar-button Na' onClick={activeButtonHandle}>
+        <Link to='/customers' className='navbar-button Na' onClick={activeButtonHandle}>
             <span className="material-icons">person</span>
             <h3 className='navButton'>Customers</h3>
-        </a>  {/* customers */}
+        </Link>  {/* customers */}
 
-        <a href="#" className='navbar-button Na' onClick={activeButtonHandle}>
+        <Link to='/transactions' className='navbar-button Na' onClick={activeButtonHandle}>
             <span className="material-icons">payments</span>
             <h3 className='navButton'>Transactions</h3>
-        </a>  {/* tarnsaction */}
+        </Link>  {/* tarnsaction */}
 
-        <a href="#" className='navbar-button Na' onClick={activeButtonHandle}>
+        <Link to='reports' className='navbar-button Na' onClick={activeButtonHandle}>
             <span className="material-icons">article</span>
             <h3 className='navButton'>Reports</h3>
-        </a>  {/* reports */}
+        </Link>  {/* reports */}
       </div>
 
       <div className='navbar-settings'>
 
-        <a href="#" className='navbar-button Na' onClick={activeButtonHandle}>
+        <Link to='/settings' className='navbar-button Na' onClick={activeButtonHandle}>
         <span className="material-icons">settings</span>
             <h3 className='navButton'>Settings</h3>
-        </a>  {/* settings */}
+        </Link>  {/* settings */}
 
         <a href="#" className='navbar-button Na' onClick={activeButtonHandle}>
             <span className="material-icons">logout</span>
