@@ -156,9 +156,9 @@ tr:nth-child(even) {
 
 .payment {
     display: grid;
-    grid-template-rows: 16.5% 28.5% 30%;
+    grid-template-rows: 27% 33% 47%;
     justify-content: center;
-    margin: 5px auto;
+    margin: 5px;
 }
 
 .payment-header {
@@ -168,7 +168,7 @@ tr:nth-child(even) {
     border: 1px solid ,darkblue solid;
     border-radius: 10px;
     width: 385px;
-    height: 100px;
+    height: 125px;
     padding: 1rem;
     background-color: darkblue;
     color: white;
@@ -190,7 +190,7 @@ tr:nth-child(even) {
     border-radius: 10px;
     padding: 0.5rem;
     padding-left: 30px;
-    overflow: scroll;
+    /* overflow: scroll; */
     background-color: darkgray;
 }
 
@@ -225,18 +225,19 @@ tr:nth-child(even) {
     padding-left: 10px;
     font-size: 10px;
     padding: 1rem;
+    height: 200px;
 
+}
+
+.sub {
+    color: red;
+    font-size: 14px;
 }
 
 .pay {
     color: white;
     padding-left: 5rem;
-    padding-top: 5rem;
-    font-size: 14px;
-}
-
-.sub {
-    color: red;
+    padding-top: 2.5rem;
     font-size: 14px;
 }
 
@@ -253,4 +254,6 @@ tr:nth-child(even) {
     border: none;
     border-radius: 15px;
     padding: 1rem;
+
+    
 }

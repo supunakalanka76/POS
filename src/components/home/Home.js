@@ -117,9 +117,6 @@ function Home() {
             <div className='p1'>Product 1 - 100 x Rs. 100 = Rs. 1000</div>
             <div className='p1'>Product 2 - 50 x Rs. 200 = Rs. 1000</div>
             <div className='p1'>Product 3 - 80 x Rs. 300 = Rs. 2400</div>
-            <div className='p1'>Product 4 - 120 x Rs. 400 = Rs. 4800</div>
-            <div className='p1'>Product 5 - 70 x Rs. 500 = Rs. 3500</div>
-            <div className='p1'>Product 6 - 150 x Rs. 600 = Rs. 9000</div>
           </div>
         </div>
         <div className='payment-footer'>
@@ -127,12 +124,14 @@ function Home() {
             <h2>Total:  Rs. </h2><br/>
             <h2>Tax:  Rs. </h2><br/>
             <h2>Discount:  Rs. </h2><br/>
+
             <div className='sub'>
               <h2>Subtotal:  Rs. </h2>
-              </div>
-          </div>
-          <div className='pay'>
+            </div>
+          
+            <div className='pay'>
             <button className='btn-payment'>Payment</button>
+            </div>
           </div>
         </div>
       </div>
