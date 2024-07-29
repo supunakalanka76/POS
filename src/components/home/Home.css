@@ -69,7 +69,7 @@
     border: 2px solid black;
     background-color: #D9D9D9;
     height: 40px;
-    border-radius: 15px;
+    border-radius: 30px;
     margin-left: 10px;
     padding-top: 5px;
     text-align: center;
@@ -79,7 +79,7 @@
 
 .search-Bar input {
     flex: 1;
-    height: 40px;
+    height: 35px;
     width: 38rem;
     background: transparent;
     border: 0;
@@ -111,7 +111,6 @@
 }
 
 /* Table CSS */
-
 .table1 {
     position: absolute;
     z-index: 2;
@@ -121,29 +120,31 @@
     height: 350px;
 }
 
-.table1 th, .table1 td {
-    border: 1px solid black;
+.product-table1 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.product-table1 thead th, .product-table1 tbody td {
+    
     text-align: center;
-    border-radius: px;
-    border: 0px solid black;
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 30px;
     padding-right: 45px;
 }
 
-.table1 th {
-    border: 1px solid white;
+.product-table1 thead th {
     background-color: darkblue;
     color: white;
 }
 
-tr:nth-child(even) {
+.product-table1 tbody tr:nth-child(even) {
     background-color: #D9D9D9;
 }
 
-.product-table1 {
-    border-collapse: collapse;
+.product-table1 tbody th:nth-child(even) {
+    background-color: #896f6f;
 }
 
 .delete-btn {
@@ -156,9 +157,12 @@ tr:nth-child(even) {
 
 .payment {
     display: grid;
-    grid-template-rows: 16.5% 28.5% 30%;
+    grid-template-rows: 27% 33% 46%;
     justify-content: center;
-    margin: 5px auto;
+    padding: 5px;
+    margin: 5px;
+    width: 400px;
+
 }
 
 .payment-header {
@@ -166,9 +170,9 @@ tr:nth-child(even) {
     grid-template-columns: 70% 30%;
     justify-content: space-between;
     border: 1px solid ,darkblue solid;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     width: 385px;
-    height: 100px;
+    height: 125px;
     padding: 1rem;
     background-color: darkblue;
     color: white;
@@ -187,10 +191,10 @@ tr:nth-child(even) {
     grid-template-rows:40% 20% 40%;
     justify-content: space-between;
     border: 0px solid;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 0.5rem;
     padding-left: 30px;
-    overflow: scroll;
+    /* overflow: scroll; */
     background-color: darkgray;
 }
 
@@ -212,7 +216,7 @@ tr:nth-child(even) {
     grid-template-rows: 40% 50% 10%;
     justify-content: left;
     border: 0.5px solid ;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background-color: darkblue;
     color: white;
 }
@@ -225,18 +229,19 @@ tr:nth-child(even) {
     padding-left: 10px;
     font-size: 10px;
     padding: 1rem;
+    height: 200px;
 
+}
+
+.sub {
+    color: red;
+    font-size: 14px;
 }
 
 .pay {
     color: white;
     padding-left: 5rem;
-    padding-top: 5rem;
-    font-size: 14px;
-}
-
-.sub {
-    color: red;
+    padding-top: 2rem;
     font-size: 14px;
 }
 
@@ -253,4 +258,6 @@ tr:nth-child(even) {
     border: none;
     border-radius: 15px;
     padding: 1rem;
+
+    
 }
