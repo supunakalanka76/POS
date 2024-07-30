@@ -7,7 +7,7 @@ function Sales() {
     <div className='sales'>
       <div className='sales-search'>
 
-        <div className='search-Bar'>
+        <div className='sales-search-Bar'>
         <div className='row'>
         <input type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off'/>
         </div>
@@ -18,10 +18,16 @@ function Sales() {
       </div>
 
       <div className='sales-detail'>
-        <p>active Orders</p>
-        <p>Unfulfilled</p>
-        <p>Fulfilled</p>
-        <p>pending</p>
+        <div className='sales-box'>
+          <h4>active Orders</h4>
+          <span class="material-icons">grading</span>
+          <span class="material-icons">close</span>
+          <span class="material-icons">question_mark</span>
+          <span class="material-icons">check</span>
+          </div>
+        <div className='sales-box'>active Orders</div>
+        <div className='sales-box'>active Orders</div>
+        <div className='sales-box'>active Orders</div>
       </div>
       
     </div>
