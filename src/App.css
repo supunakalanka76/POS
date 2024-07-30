@@ -7,5 +7,4 @@
   display: grid;
   grid-template-rows: 10% 90%;
   flex-grow: 1;
-  height: fit-content;
 }
