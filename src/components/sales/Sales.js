@@ -19,15 +19,29 @@ function Sales() {
 
       <div className='sales-detail'>
         <div className='sales-box'>
-          <h4>active Orders</h4>
-          <span class="material-icons">grading</span>
-          <span class="material-icons">close</span>
-          <span class="material-icons">question_mark</span>
-          <span class="material-icons">check</span>
-          </div>
-        <div className='sales-box'>active Orders</div>
-        <div className='sales-box'>active Orders</div>
-        <div className='sales-box'>active Orders</div>
+          <h2>Active Orders</h2>
+          <h3>1046</h3>
+          <span class='material-icons active-icon1'>grading</span>
+        </div>
+
+        <div className='sales-box'>
+          <h2>Unfulfilled Orders</h2>
+          <h3>1046</h3>
+          <span class='material-icons active-icon2'>close</span>
+        </div>
+
+        <div className='sales-box'>
+          <h2>Pending Orders</h2>
+          <h3>1046</h3>
+          <span class='material-icons active-icon3'>question_mark</span>
+        </div>
+
+        <div className='sales-box'>
+          <h2>Fulfilled Orders</h2>
+          <h3>1046</h3>
+          <span class='material-icons active-icon4'>check</span>
+        </div>
+
       </div>
       
     </div>

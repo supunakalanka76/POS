@@ -111,7 +111,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    margin-top: 3rem;
+    margin-top: 5rem;
     padding-top: 1rem;
     padding-left: 2rem;
     margin-right: 3rem;
@@ -119,8 +119,68 @@
 }
 
 .sales-box {
+    position: relative;
+    display: flex;
+    justify-content: left;
     border: 2px solid black;
+    width: 16.4rem;
+    height: 10rem;
     padding: 10px;
     text-align: center;
-    padding: 1rem;
-  }
+    padding: 0.5rem;
+    background-color: darkblue;
+}
+
+.sales-box h2 {
+    position: absolute;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-weight: 800;
+    padding: 10px;
+    padding-right: 2rem;
+}
+
+.sales-box h3 {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 70px;
+    font-size: 50px;
+    color: white;
+    padding: 10px;
+    padding-right: 1rem;
+}
+
+.active-icon1 {
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    top: 90px;
+    left: 12.5rem;
+}
+
+.active-icon2 {
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    top: 90px;
+    left: 12.5rem;
+}
+
+.active-icon3 {
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    top: 90px;
+    left: 12.5rem;
+}
+
+.active-icon4 {
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    top: 90px;
+    left: 12.5rem;
+}

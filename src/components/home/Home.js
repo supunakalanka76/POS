@@ -43,57 +43,57 @@ function Home() {
               <td><span className="material-icons delete-btn">delete</span></td>
             </tr>
             <tr>
-              <td>1</td>
-              <td>Product 1</td>
+              <td>3</td>
+              <td>Product 3</td>
               <td>100</td>
               <td>Rs. 100</td>
               <td><span className="material-icons delete-btn">delete</span></td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Product 2</td>
+              <td>4</td>
+              <td>Product 4</td>
               <td>50</td>
               <td>Rs. 200</td>
               <td><span className="material-icons delete-btn">delete</span></td>
             </tr>
             <tr>
-              <td>1</td>
-              <td>Product 1</td>
+              <td>5</td>
+              <td>Product 5</td>
               <td>100</td>
               <td>Rs. 100</td>
               <td><span className="material-icons delete-btn">delete</span></td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Product 2</td>
+              <td>6</td>
+              <td>Product 6</td>
               <td>50</td>
               <td>Rs. 200</td>
               <td><span className="material-icons delete-btn">delete</span></td>
             </tr>
             <tr>
-              <td>1</td>
-              <td>Product 1</td>
+              <td>7</td>
+              <td>Product 7</td>
               <td>100</td>
               <td>Rs. 100</td>
               <td><span className="material-icons delete-btn">delete</span></td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Product 2</td>
+              <td>8</td>
+              <td>Product 8</td>
               <td>50</td>
               <td>Rs. 200</td>
               <td><span className="material-icons delete-btn">delete</span></td>
             </tr>
             <tr>
-              <td>1</td>
-              <td>Product 1</td>
+              <td>9</td>
+              <td>Product 9</td>
               <td>100</td>
               <td>Rs. 100</td>
               <td><span className="material-icons delete-btn">delete</span></td>
             </tr>
             <tr>
-              <td>2</td>
-              <td>Product 2</td>
+              <td>10</td>
+              <td>Product 10</td>
               <td>50</td>
               <td>Rs. 200</td>
               <td><span className="material-icons delete-btn">delete</span></td>
