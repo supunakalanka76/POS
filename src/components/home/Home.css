@@ -121,6 +121,7 @@
 }
 
 .product-table1 {
+    position: relative;
     border-collapse: collapse;
     width: 100%;
 }
