@@ -43,7 +43,12 @@ function Sales() {
         </div>
 
       </div>
-      
+      <div className='sales-table'>
+        <div >
+
+        </div>
+      </div>
+
     </div>
   )
 }

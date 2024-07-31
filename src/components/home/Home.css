@@ -50,7 +50,6 @@
 .home{
     display: grid;
     grid-template-columns: 65% 35%;
-    width: 100%;
 }
 
 /* search bar */
@@ -123,7 +122,6 @@
 .product-table1 {
     position: relative;
     border-collapse: collapse;
-    width: 100%;
 }
 
 .product-table1 thead th, .product-table1 tbody td {
@@ -160,9 +158,8 @@
     display: grid;
     grid-template-rows: 27% 33% 46%;
     justify-content: center;
-    padding: 5px;
     margin: 5px;
-    width: 400px;
+    /* width: 400px; */
 
 }
 
