@@ -1,18 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'material-icons/iconfont/material-icons.css';
 import './Home.css';
 
 function Home() {
+
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const categories = ['category1', 'category2', 'category3'];
+
+    const toggleDropdown = () => {
+      setDropdownVisible(!dropdownVisible);
+    };
+
+    const handleCategorySelect = (category) => {
+      setSelectedCategory(category);
+      setDropdownVisible(false);
+    };
+
+
   return (
     <div className='home'> 
       <div className='search-bar'>
       <div className='search-Bar'>
         <div className='row'>
-        <input type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off'/>
+        <input type='text' id='input-box' placeholder={selectedCategory || 'Search Here...'} autoCapitalize='off'/>
         </div>
       </div>
       <div className='category'>
-        <button className='btn-category'>Category</button>
+        <button className='btn-category' onClick={toggleDropdown}>
+          Category
+        </button>
+        {dropdownVisible && (
+          <div className='dropdown-menu'>
+            {categories.map((category, index) => (
+              <div key={index} className='dropdown-item' onClick={() => handleCategorySelect(category)}>
+                {category}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       </div>
 
@@ -126,6 +152,7 @@ function Home() {
             <h2>Tax:  Rs. </h2><br/>
             <h2>Discount:  Rs. </h2><br/>
 
+            <div className='line'></div>
             <div className='sub'>
               <h2>Subtotal:  Rs. </h2>
             </div>
