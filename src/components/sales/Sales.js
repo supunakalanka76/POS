@@ -3,6 +3,7 @@ import 'material-icons/iconfont/material-icons.css';
 import './Sales.css';
 
 function Sales() {
+
   return (
     <div className='sales'>
       <div className='sales-search'>
@@ -43,10 +44,52 @@ function Sales() {
         </div>
 
       </div>
-      <div className='sales-table'>
-        <div >
-
+      <div className='sales-info'>
+        <div className='sales-table-list'>
+          <h3>All Orders</h3>
+          <h3>Active</h3>
+          <h3>Unpaid</h3>
+          <h3>Unfulfilled</h3>
         </div>
+
+        {/* <div className='table2'>
+          <table className='sales-table'>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Customer Name</th>
+                <th>Fulfillment</th>
+                <th>Total Amount</th>
+                <th>Profit</th>
+                <th>Payment Status</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>123</td>
+                <td>2022-01-01</td>
+                <td>John Doe</td>
+                <td>Shipped</td>
+                <td>Rs. 5000</td>
+                <td>Rs. 1000</td>
+                <td>Paid</td>
+                <td>2022-01-05</td>
+              </tr>
+              <tr>
+                <td>124</td>
+                <td>2022-01-02</td>
+                <td>Jane Doe</td>
+                <td>Delivered</td>
+                <td>Rs. 4000</td>
+                <td>Rs. 800</td>
+                <td>Unpaid</td>
+                <td>2022-01-09</td>
+              </tr>
+            </tbody>
+          </table>
+        </div> */}
       </div>
 
     </div>

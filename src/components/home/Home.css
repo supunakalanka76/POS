@@ -109,14 +109,43 @@
     cursor: pointer;
 }
 
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    visibility: initial;
+    top: 140px;
+    width: 110px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 5px;
+}
+
+.dropdown-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.dropdown-item:hover {
+    background-color: #D9D9D9;
+}
+
 /* Table CSS */
 .table1 {
-    position: absolute;
+    display: inline;
+    position:absolute;
     z-index: 2;
     top: 180px;
     padding-left: 20px;
     overflow: scroll;
-    height: 350px;
+    height: 300px;
 }
 
 .product-table1 {
@@ -156,7 +185,7 @@
 
 .payment {
     display: grid;
-    grid-template-rows: 27% 33% 46%;
+    grid-template-rows: 27% 33% 47%;
     justify-content: center;
     margin: 5px;
     /* width: 400px; */
@@ -229,6 +258,11 @@
     padding: 1rem;
     height: 200px;
 
+}
+
+.line {
+    border-top: 2px solid white;
+    margin-top: 30px;
 }
 
 .sub {
