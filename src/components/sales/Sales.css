@@ -60,7 +60,7 @@
     align-items: center;
     justify-content: left;
     padding: 1rem;
-    padding-top: 3rem;
+    padding-top: 2.5rem;
 }
 
 .sales-search-Bar {
@@ -96,7 +96,7 @@
 }
 
 .btn-order {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -108,13 +108,15 @@
     border-radius: 15px;
     border: 2px solid;
     padding: 10px 15px;
+    bottom: -1.5rem;
+    width: 150px;
     cursor: pointer;
 }
 
 .sales-detail {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, 17rem);
+    gap: 28.6px;
     margin-top: 5rem;
     padding-top: 1rem;
     padding-left: 2rem;
@@ -127,9 +129,10 @@
     display: flex;
     justify-content: left;
     border: 2px solid black;
-    width: 16.4rem;
+    border-radius: 10px;
+    width: 16rem;
     height: 10rem;
-    padding: 10px;
+    padding: 1rem;
     text-align: center;
     padding: 0.5rem;
     background-color: darkblue;
@@ -190,30 +193,51 @@
     left: 12.5rem;
 }
 
+.sales-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    top: 10px;
+    padding-left: 30px;
+    border-bottom: 2px solid black ;
+    width: 73.5rem;
+    border-width: 3px;
+    padding-bottom: 5px;
+}
 
+.sales-info .sales-info-items {
+    display: inline;
+    margin-right: 20px;
+    margin-left: 5px;
+    font-size: 20px;
+    color: black;
+    white-space: nowrap;
+    cursor: pointer;
+}
 
-/* .table2 {
+.table2 {
     display: inline;
     position:absolute;
     z-index: 2;
-    top: 180px;
-    padding-left: 20px;
+    top: 410px;
     overflow: scroll;
-    height: 300px;
+    border-radius: 10px;
+    height: 250px;
 }
 
 .sales-table {
     position: relative;
     border-collapse: collapse;
+    width: 73.5rem;
 }
 
 .sales-table thead th, .sales-table tbody td {
-    
     text-align: center;
     padding-top: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     padding-left: 30px;
-    padding-right: 45px;
+    padding-right: 35px;
 }
 
 .sales-table thead th {
@@ -227,4 +251,4 @@
 
 .sales-table tbody th:nth-child(even) {
     background-color: #896f6f;
-} */
+}
