@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import 'material-icons/iconfont/material-icons.css';
 import './Home.css';
+import PaymentPopup from './PaymentPopup';
 
 function Home() {
 
+    const [isOpenPopup, setIsOpenPopup] = useState(false);
+    const openPopup = () => setIsOpenPopup(true);
+    const closePopup = () => setIsOpenPopup(false);
+
+    
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('');
     const categories = ['category1', 'category2', 'category3'];
@@ -18,7 +24,15 @@ function Home() {
     };
 
 
+
   return (
+    <div className='Home'>
+      <PaymentPopup isOpen={isOpenPopup} isClose={closePopup}>
+        <div className='popup-content'>
+          <h2>Payment Successful</h2>
+          <p>Thank you for your purchase.</p>
+        </div>
+      </PaymentPopup>
     <div className='home'> 
       <div className='search-bar'>
       <div className='search-Bar'>
@@ -158,11 +172,12 @@ function Home() {
             </div>
           
             <div className='pay'>
-            <button className='btn-payment'>Payment</button>
+            <button className='btn-payment' onClick={openPopup}>Payment</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
 
   )
