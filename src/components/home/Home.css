@@ -292,6 +292,7 @@
     padding: 1rem;
 }
 
+
 /* home eke popup eke css */
 
 .payment-popup-overlay {
@@ -308,10 +309,141 @@
 }
 
 .payment-popup {
-    width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 900px;
+    height: 500px;
     background-color: white;
+    max-width: 90%;
+    position: relative;
+}
+
+.payment-popup-header {
+    
+    justify-content: center;
+}
+
+.payment-popup-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 350px;
+    margin-top: 10px;
 }
 
 .popup-close {
+    background: none;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 15px;
     float: right;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 4px 4px 4px 4px;
+    position: absolute;
+    top: 10px;
+    right: 1px;
+    cursor: pointer;
+}
+
+.popup-content {
+    display: flex;
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: darkblue;
+    color: white;
+    padding: 10px;
+    gap: 15px;
+    border-radius: 0 10px 10px 0;
+    width: 270px;
+}
+
+.payment-methods div {
+    font-weight: 700;
+    padding: 10px 0;
+    cursor: pointer;
+    align-items: center;
+}
+
+.payment-methods div:hover {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.user-info {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.user-info span {
+    font-weight: normal;
+}
+
+.field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    top: 120px;
+    margin-bottom: 10px;
+}
+
+.field label {
+    flex: 0 0 100px;
+    text-align: right;
+    margin-left: 20px;
+}
+
+.field input {
+    flex: 1;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    width: 250px;
+    border: 1px solid #CCC;
+}
+
+.completed-input {
+    background: #D4EDDA;
+}
+
+.balance-input {
+    background: #F8D7DA;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: end;
+    margin-top: 10px;
+    margin-bottom: -15px;
+    margin-left: -100px;
+
+}
+
+.cancel-btn, .done-btn {
+    padding: 10px 30px;
+    border: none;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: #CCC;
+}
+
+.done-btn {
+    background: darkblue;
+    color: white;
 }

@@ -5,6 +5,12 @@ import PaymentPopup from './PaymentPopup';
 
 function Home() {
 
+  // function activeButtonHandle (event) {
+  //   const buttons = document.querySelectorAll('.payment-methods');
+  //   buttons.forEach (link => link.classList.remove('active'));
+  //   event.currentTarget.classList.add('active');
+  // }
+
     const [isOpenPopup, setIsOpenPopup] = useState(false);
     const openPopup = () => setIsOpenPopup(true);
     const closePopup = () => setIsOpenPopup(false);
@@ -29,8 +35,62 @@ function Home() {
     <div className='Home'>
       <PaymentPopup isOpen={isOpenPopup} isClose={closePopup}>
         <div className='popup-content'>
-          <h2>Payment Successful</h2>
-          <p>Thank you for your purchase.</p>
+
+          <div className='payment-methods'>
+            <div>Cash</div>
+            <div>Card</div>
+            <div>Cheque</div>
+            <div>Bank</div>
+            <div>Reedem</div>
+            <div>Points</div>
+
+            <div className='user-info'>
+            Supun Akalanka <br/>
+            <span>supunakalanka76@gmail.com</span>
+            </div>
+          </div>
+
+          <div className='payment-detail'>
+            <div className='field'>
+              <label>Cash:</label>
+              <input type="text" />
+            </div>
+
+            <div className='field'>
+              <label>Tax:</label>
+              <input type="text" />
+            </div>
+
+            <div className='field'>
+              <label>Points:</label>
+              <input type="text" />
+            </div>
+
+            <div className='field'>
+              <label>Discount:</label>
+              <input type="text" />
+            </div>
+
+            <div className='field'>
+              <label>Total Due:</label>
+              <input type="text" />
+            </div>
+
+            <div className='field'>
+              <label>Completed:</label>
+              <input type="text" className='completed-input' />
+            </div>
+
+            <div className='field'>
+              <label>Balance:</label>
+              <input type="text" className='balance-input' />
+            </div>
+          </div>
+
+          <div className='buttons'>
+            <button className='cancel-btn'>Cancel</button>
+            <button className='done-btn'>Done</button>
+          </div>
         </div>
       </PaymentPopup>
     <div className='home'> 
