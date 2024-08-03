@@ -45,12 +45,10 @@ function Sales() {
 
       </div>
       <div className='sales-info'>
-        <div className='sales-info-items'>
-          <div className='sales-info-items'>All Orders</div>
+          <div className='sales-info-items active'>All Orders</div>
           <div className='sales-info-items'>Active</div>
           <div className='sales-info-items'>Unpaid</div>
           <div className='sales-info-items'>Unfulfilled</div>
-        </div>
 
         <div className='table2'>
           <table className='sales-table'>

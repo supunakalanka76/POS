@@ -5,11 +5,11 @@ import PaymentPopup from './PaymentPopup';
 
 function Home() {
 
-  function activeButtonHandle (event) {
-    const buttons = document.querySelectorAll('.payment-methods');
-    buttons.forEach (link => link.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-  }
+  // function activeButtonHandle (event) {
+  //   const buttons = document.querySelectorAll('.payment-methods');
+  //   buttons.forEach (link => link.classList.remove('active'));
+  //   event.currentTarget.classList.add('active');
+  // }
 
     const [isOpenPopup, setIsOpenPopup] = useState(false);
     const openPopup = () => setIsOpenPopup(true);

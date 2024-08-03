@@ -195,25 +195,21 @@
 
 .sales-info {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    top: 10px;
-    padding-left: 30px;
-    border-bottom: 2px solid black ;
-    width: 73.5rem;
-    border-width: 3px;
-    padding-bottom: 5px;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    border-bottom: 2px solid black;
 }
 
-.sales-info .sales-info-items {
-    display: inline;
-    margin-right: 20px;
-    margin-left: 5px;
-    font-size: 20px;
-    color: black;
-    white-space: nowrap;
+.sales-info-items {
+    background: #F0F0F0;
+    padding: 5px 10px;
     cursor: pointer;
+    font-weight: 700;
+}
+
+.sales-info-items.active {
+    background: darkblue;
+    color: white;
 }
 
 .table2 {
