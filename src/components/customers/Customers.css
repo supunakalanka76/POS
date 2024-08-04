@@ -39,7 +39,6 @@
     margin: 0;
     padding: 0;
     outline: 0;
-    appearance: none;
     border: 0;
     text-decoration: none;
     list-style: none;
@@ -171,7 +170,7 @@
 }
 
 .customer-category.active {
-    color: blue !important;
+    color: blue;
 }
 
 .table4 {
@@ -212,7 +211,7 @@
 }
 
 .view-btn {
-    background: darkorange !important;
+    background: darkorange;
     color: white;
     border-radius: 20px;
     padding: 5px;
@@ -273,7 +272,6 @@
 
 .popup-content {
     display: flex;
-    flex-direction: row;
 }
 
 .personal-information,
@@ -283,13 +281,16 @@
 }
 
 .personal-information {
+    border: 1px solid;
+    border-radius: 0px;
+    box-shadow: 5px 10px 8px #888888;
     background-color: darkblue;
     color: white;
 }
 
 .additional-information {
-    background-color: darkblue;
-    color: white;
+    background-color: white;
+    color: darkblue;
 }
 
 label {
@@ -298,12 +299,17 @@ label {
     font-size: 16px;
 }
 
+.loyal-check {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
 input[type="text1"],
 input[type="email"],
 input[type="tel"],
 input[type="date"],
-textarea
-select {
+textarea {
     width: calc(100% - 20px);
     padding: 8px 10px;
     margin-top: 5px;
@@ -312,9 +318,19 @@ select {
     outline: none;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
     margin-right: 10px;
+    margin-top: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
 }
 
 textarea {
@@ -331,25 +347,35 @@ textarea {
 
 .popup-footer {
     display: flex;
-    justify-content: flex-end;
-    padding: 20px;
-    background-color: #f1f1f1;
+    padding: 25px;
+    margin-top: 30px;
+    
 }
 
 .btn-register {
     background-color: #0F3460;
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 10px 30px;
+    border-radius: 10px;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 25px;
 }
 
 .btn-cancel {
     background-color: #CCC;
     color: #333;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+.btn-delete {
+    background-color: #FF7F7F;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
     cursor: pointer;
 }
