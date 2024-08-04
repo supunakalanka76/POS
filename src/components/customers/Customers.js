@@ -1,10 +1,112 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'material-icons/iconfont/material-icons.css';
 import './Customers.css';
+import CustomerPopup from './CustomerPopup';
 
 function Customers() {
 
+  const [isOpenPopup, setIsOpenPopup] = useState(false);
+  const openPopup = () => setIsOpenPopup(true);
+  const closePopup = () => setIsOpenPopup(false);
+
   return (
+    <div className='Customers'>
+      <CustomerPopup isOpen={isOpenPopup} isClose={closePopup}>
+        <div className='popup-content'>
+          <div className='personal-information'>
+            <h3>Personal Information</h3>
+            <label>
+              First Name:
+              <input type='text1' id='first-name' placeholder='First Name'/>
+            </label>
+
+            <label>
+              Last Name:
+              <input type='text1' id='last-name' placeholder='Last Name'/>
+            </label>
+
+            <label>
+              Date of Birth:
+              <input type='date' id='dob' placeholder='mm/dd/yyyy'/>
+            </label>
+
+            <label>
+              Gender:
+              <select>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+
+            <label>
+              Email Address:
+              <input type='email' id='email' placeholder='Email Address'/>
+            </label>
+
+            <label>
+              Phone Number:
+              <input type='tel' id='tel' placeholder='Phone Number'/>
+            </label>
+          </div>
+
+          <div className='additional-information'>
+            <h3>Additional Information</h3>
+
+            <label>
+              Address:
+              <input type='text1' id='address' placeholder='Address'/>
+            </label>
+
+            <label>
+              Customer Type:
+              <select>
+                <option value="">Select Customer Type</option>
+                <option value="regular">Regular</option>
+                <option value="vip">VIP</option>
+              </select>
+            </label>
+
+            <label>
+              Loyalty Program Enrollment:
+              <input type='checkbox'/>
+            </label>
+
+            <label>
+              Preferred Contact Method:
+              <div className='contact-methods'>
+
+                <label>
+                  <input type='radio' name='contact-method' value='phone'/>
+                  <span>Phone</span>
+                </label>
+
+                <label>
+                  <input type='radio' name='contact-method' value='email'/>
+                  <span>Email</span>
+                </label>
+                
+                <label>
+                  <input type='radio' name='contact-method' value='both'/>
+                  <span>Phone &amp; Email</span>
+                </label>
+              </div>
+            </label>
+
+            <label>
+              Notes:
+              <textarea id='notes' placeholder='Notes'/>
+            </label>
+          </div>
+
+          <div className='popup-footer'>
+            <button className='btn-cancel'>Cancel</button>
+            <button className='btn-register'>Register</button>
+            <button className='btn-delete'>Delete</button>
+          </div>
+        </div>
+      </CustomerPopup>
     <div className='customers'>
       <div className='customers-search'>
 
@@ -14,7 +116,7 @@ function Customers() {
         </div>
         </div>
       <div className='add-new-btn'>
-        <button className='customers-btn'>New Customer</button>
+        <button className='customers-btn' onClick={openPopup}>New Customer</button>
       </div>
       </div>
 
@@ -114,6 +216,7 @@ function Customers() {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
   )
 }
