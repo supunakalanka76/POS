@@ -68,7 +68,7 @@ function Customers() {
               </select>
             </label>
 
-            <label>
+            <label className='loyal-check'>
               Loyalty Program Enrollment:
               <input type='checkbox'/>
             </label>
@@ -98,12 +98,13 @@ function Customers() {
               Notes:
               <textarea id='notes' placeholder='Notes'/>
             </label>
-          </div>
 
-          <div className='popup-footer'>
-            <button className='btn-cancel'>Cancel</button>
-            <button className='btn-register'>Register</button>
-            <button className='btn-delete'>Delete</button>
+            <div className='popup-footer'>
+              <button className='btn-cancel'>Cancel</button>
+              <button className='btn-register'>Register</button>
+              <button className='btn-delete'>Delete</button>
+            </div>
+
           </div>
         </div>
       </CustomerPopup>
