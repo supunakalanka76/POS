@@ -149,12 +149,12 @@ function Customers() {
       </div>
 
       <div className='customers-categories'>
-        <div className='customer-category active'>All</div>
-        <div className='customer-category'>Regular</div>
-        <div className='customer-category'>Wholesale</div>
-        <div className='customer-category'>Retail</div>
-        <div className='customer-category'>Online</div>
-      </div>
+        <p>All</p>
+        <p>Regular</p>
+        <p>Wholesale</p>
+        <p>Retail</p>
+        <p>Online</p>
+        </div>
 
       <div className='table4'>
         <table className='customer-table'>
@@ -217,6 +217,7 @@ function Customers() {
           </tbody>
         </table>
       </div>
+      
     </div>
     </div>
   )
