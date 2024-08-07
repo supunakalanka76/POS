@@ -93,32 +93,18 @@ function Home() {
           </div>
         </div>
       </PaymentPopup>
-    <div className='home'> 
-      <div className='search-bar'>
-      <div className='search-Bar'>
-        <div className='row'>
-        <input type='text' id='input-box' placeholder={selectedCategory || 'Search Here...'} autoCapitalize='off'/>
-        </div>
-      </div>
-      <div className='category'>
-        <button className='btn-category' onClick={toggleDropdown}>
-          Category
-        </button>
-        {dropdownVisible && (
-          <div className='dropdown-menu'>
-            {categories.map((category, index) => (
-              <div key={index} className='dropdown-item' onClick={() => handleCategorySelect(category)}>
-                {category}
-              </div>
-            ))}
+    <div className='home'>
+      <div className='section-A'>
+        <div className='home-search'>
+          <div className='home-search-bar'>
+            <input type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off' />
           </div>
-        )}
-      </div>
-      </div>
+          <button className='btn-category'>Category</button>
+        </div>
 
-      <div className="table1">
-        <table className="product-table1">
-          <thead>
+        <div className='table1'>
+            <table className='home-table'>
+            <thead>
             <tr>
               <th>Product Id</th>
               <th>Product Name</th>
@@ -200,42 +186,35 @@ function Home() {
             </tr>
             {/* <!-- Add more rows as needed --> */}
           </tbody>
-        </table>
+            </table>
+        </div>
+
+        <div className='recent'>
+          <div className='recent-payment'>
+            
+          </div>
+        </div>
       </div>
-      
-      <div className='payment'>
+
+      <div className='section-B'>
         <div className='payment-header'>
           <div className='payment-header-text'>
             <h1>Reciept</h1>
             <h4>Company Name</h4>
-            <div className='payment-header-icon'>
-            <span className='material-icons-outlined local-mall'>local_mall</span>
-            </div>
           </div>
-        </div>
-        <div className='payment-list'>
-          <div>
-            <div className='p1'>Product 1 - 100 x Rs. 100 = Rs. 1000</div>
-            <div className='p1'>Product 2 - 50 x Rs. 200 = Rs. 1000</div>
-            <div className='p1'>Product 3 - 80 x Rs. 300 = Rs. 2400</div>
-          </div>
-        </div>
-        <div className='payment-footer'>
-          <div className='place-pay'>
-            <h2>Total:  Rs. </h2><br/>
-            <h2>Tax:  Rs. </h2><br/>
-            <h2>Discount:  Rs. </h2><br/>
 
-            <div className='line'></div>
-            <div className='sub'>
-              <h2>Subtotal:  Rs. </h2>
-            </div>
-          
-            <div className='pay'>
-            <button className='btn-payment' onClick={openPopup}>Payment</button>
-            </div>
+          <div className='payment-header-icon'>
+            <span className='material-icons-outlined local-mall'>local_mall</span>
           </div>
-        </div>
+          </div>
+
+          <div className='payment-list'>
+            fguijijok
+          </div>
+
+          <div className='payment-footer'>
+            huhijiokplp
+          </div>
       </div>
     </div>
     </div>
