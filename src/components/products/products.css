@@ -48,7 +48,7 @@
 
 .products {
     display: grid;
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 50% 50%;
     align-items: center;
     margin: 10px;
 }
@@ -109,7 +109,6 @@
     display: inline;
     position:absolute;
     z-index: 2;
-    top: 230px;
     padding-left: 20px;
     overflow: scroll;
     height: 450px;

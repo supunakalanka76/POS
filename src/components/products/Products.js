@@ -36,34 +36,35 @@ function Products() {
         <p>Home & Garden</p>
         <p>Sports & Outdoors</p>
         <p>Books</p>
-      </div>
+      
 
-      <div className='table3'>
-        <table className='product-table3'>
-          <thead>
-            <th>Product ID</th>
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Available Quantity</th>
-            <th>Status</th>
-            <th>Action</th>
-          </thead>
+        <div className='table3'>
+          <table className='product-table3'>
+            <thead>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Available Quantity</th>
+              <th>Status</th>
+              <th>Action</th>
+            </thead>
 
-          <tbody>
-            {products.map((product, index) => (
-              <tr key={index}>
-                <td>{product.id}</td>
-                <td>{product.name}</td>
-                <td>{product.price}</td>
-                <td>{product.quantity}</td>
-                <td className= {product.status === 'Available' ? 'status-available' : 'status-unavailable'}>
-                  {product.status}
-                </td>
-                <td><span className='view-btn'>view</span></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+            <tbody>
+              {products.map((product, index) => (
+                <tr key={index}>
+                  <td>{product.id}</td>
+                  <td>{product.name}</td>
+                  <td>{product.price}</td>
+                  <td>{product.quantity}</td>
+                  <td className= {product.status === 'Available' ? 'status-available' : 'status-unavailable'}>
+                    {product.status}
+                  </td>
+                  <td><span className='view-btn'>view</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   )

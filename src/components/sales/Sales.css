@@ -159,8 +159,8 @@
 }
 
 .sales-info {
-    display: grid;
-    grid-template-columns: 13% 13% 13% 13%;
+    display: flex;
+    
     margin-bottom: 20px;
     border-bottom: 2px solid black;
     padding-left: 1.5rem;
@@ -179,7 +179,6 @@
     display: inline;
     position:absolute;
     z-index: 2;
-    top: 380px;
     overflow: scroll;
     border-radius: 10px;
     height: 320px;
