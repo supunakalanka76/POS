@@ -50,6 +50,7 @@
     display: grid;
     grid-template-rows: 20% 30% 50%;
     align-items: center;
+    margin: 10px;
 }
 
 .sales-search {
@@ -68,7 +69,6 @@
     background-color: #D9D9D9;
     height: 40px;
     border-radius: 30px;
-    margin-left: 10px;
     padding-top: 5px;
     padding-left: 0.5rem;
     text-align: center;
@@ -124,6 +124,7 @@
     display: grid;
     grid-template-columns: 60% 40%;
     margin: 1rem;
+    height: 100px;
     border-radius: 30px;
     padding: 1rem;
 }
@@ -133,7 +134,8 @@
     display: flex;
     flex-direction: row;
     color: white;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
     padding: 5px;
     padding-right: 2rem;
 }
@@ -141,8 +143,8 @@
 .sales-box h3 {
     display: flex;
     flex-direction: row;
-    top: 70px;
-    font-size: 50px;
+    top: 10px;
+    font-size: 40px;
     color: white;
     padding: 5px;
     padding-right: 1rem;
@@ -150,36 +152,37 @@
 
 .active-icon {
     color: white;
-    font-size: 60px;
+    font-size: 50px;
     position: relative;
-    top: 40px;
-    left: 20px;
+    top: 30px;
+    left: 30px;
 }
 
 .sales-info {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 13% 13% 13% 13%;
     margin-bottom: 20px;
     border-bottom: 2px solid black;
+    padding-left: 1.5rem;
 }
 
-.sales-info-items {
+.sales-info p {
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 600;
 }
 
-.sales-info-items.active {
-    color: lightblue !important;
+.sales-info p:hover {
+    color: blue;
 }
 
 .table2 {
     display: inline;
     position:absolute;
     z-index: 2;
-    top: 420px;
+    top: 380px;
     overflow: scroll;
     border-radius: 10px;
-    height: 250px;
+    height: 320px;
 }
 
 .sales-table {

@@ -30,12 +30,12 @@ function Products() {
       </div>
 
       <div className='product-categories'>
-        <div className='product-category active'>All</div>
-        <div className='product-category'>Electronics</div>
-        <div className='product-category'>Accessories</div>
-        <div className='product-category'>Home & Garden</div>
-        <div className='product-category'>Sports & Outdoors</div>
-        <div className='product-category'>Books</div>
+        <p>All</p>
+        <p>Electronics</p>
+        <p>Accessories</p>
+        <p>Home & Garden</p>
+        <p>Sports & Outdoors</p>
+        <p>Books</p>
       </div>
 
       <div className='table3'>
