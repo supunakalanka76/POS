@@ -77,7 +77,7 @@ function Home() {
           </div>
         </div>
       </PaymentPopup>
-    <div className='home'>
+    <div className='home-section'>
       <div className='section-A'>
         <div className='home-search'>
           <div className='home-search-bar'>
@@ -172,11 +172,6 @@ function Home() {
           </tbody>
             </table>
         </div>
-
-        <div className='recent'>
-          <div className='recent-payment'>
-          </div>
-        </div>
       </div>
 
       <div className='section-B'>
@@ -189,9 +184,9 @@ function Home() {
           <div className='payment-header-icon'>
             <span className='material-icons-outlined local-mall'>local_mall</span>
           </div>
-          </div>
+        </div>
 
-          <div className='payment-list'>
+        <div className='payment-list'>
           <div>
             <div className='p1'>Product 1 - 100 x Rs. 100 = Rs. 1000</div>
             <div className='p1'>Product 2 - 50 x Rs. 200 = Rs. 1000</div>
@@ -204,12 +199,26 @@ function Home() {
             <div className='p1'>Product 9 - 150 x Rs. 900 = Rs. 13500</div>
             <div className='p1'>Product 10 - 180 x Rs. 1000 = Rs. 18000</div>
           </div>
+        </div>
+
+        <div className='payment-footer'>
+          <div className='place-pay'>
+            <h3>Total:  Rs. </h3>
+            <h3>Tax:  Rs. </h3>
+            <h3>Discount:  Rs. </h3>
           </div>
 
-          <div className='payment-footer'>
-            
+          <div className='sub-total'>
+            <h3>Sub Total: Rs. </h3>
           </div>
+
+          <div className='pay'>
+            <button className='pay-btn' onClick={openPopup}>Payment</button>
+          </div>
+
+        </div>
       </div>
+      
     </div>
     </div>
 

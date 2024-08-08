@@ -117,11 +117,12 @@
     z-index: 2;
     overflow-y: scroll;
     height: 300px;
+    margin-top: 20px;
 }
 
 .sales-table {
     border-collapse: collapse;
-    margin-top: 20px;
+    width: 100%;
 }
 
 .sales-table thead th, .sales-table tbody td {
