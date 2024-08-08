@@ -184,7 +184,7 @@ function Customers() {
               <td>John Doe</td>
               <td>Regular</td>
               <td>100</td>
-              <td><button className='view-btn'>status</button></td>
+              <td><button className='status-btn'>status</button></td>
             </tr>
 
             <tr>
@@ -192,7 +192,7 @@ function Customers() {
               <td>Jane Smith</td>
               <td>Retail</td>
               <td>200</td>
-              <td><button className='view-btn'>status</button></td>
+              <td><button className='status-btn'>status</button></td>
             </tr>
 
             <tr>
@@ -200,7 +200,7 @@ function Customers() {
               <td>Mark Johnson</td>
               <td>Wholesale</td>
               <td>300</td>
-              <td><button className='view-btn'>status</button></td>
+              <td><button className='status-btn'>status</button></td>
             </tr>
 
             <tr>
@@ -208,7 +208,7 @@ function Customers() {
               <td>David Johnson</td>
               <td>Online</td>
               <td>400</td>
-              <td><button className='view-btn'>status</button></td>
+              <td><button className='status-btn'>status</button></td>
             </tr>
 
             <tr>
@@ -216,7 +216,7 @@ function Customers() {
               <td>John Addams</td>
               <td>Regular</td>
               <td>100</td>
-              <td><button className='view-btn'>status</button></td>
+              <td><button className='status-btn'>status</button></td>
             </tr>
 
             <tr>
@@ -224,7 +224,7 @@ function Customers() {
               <td>Jane Clark</td>
               <td>Retail</td>
               <td>200</td>
-              <td><button className='view-btn'>status</button></td>
+              <td><button className='status-btn'>status</button></td>
             </tr>
           </tbody>
           </table>

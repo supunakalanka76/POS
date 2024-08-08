@@ -9,18 +9,17 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.home {
+.home-section {
     display: grid;
     grid-template-columns: 70% 30%;
     margin: 10px;
     align-items: center;
-    background-color: bisque;
 }
 
 .section-A {
     display: grid;
-    grid-template-rows: 10% 60% 40%;
-    background-color: lightblue;
+    grid-template-rows: 10% 60% 30%;
+    height: 87vh;
 }
 
 .home-search {
@@ -29,7 +28,6 @@
     width: 98%;
     margin: 0 auto;
     align-items: center;
-    background-color: #F8D7DA;
 }
 
 .home-search-bar input {
@@ -58,6 +56,7 @@
     overflow-y: scroll;
     margin-top: 1.5rem;
     margin-left: 1rem;
+    margin-bottom: 1rem;
 }
 
 .home-table {
@@ -92,53 +91,31 @@
     cursor: pointer;
 }
 
-.recent {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    background-color: blueviolet;
-}
-
 .section-B {
     display: grid;
-    grid-template-rows: 25% 40% 45%;
-    background-color: #896f6f;
-    
+    grid-template-rows: 20% 40% 40%;
+    height: 87vh;
 }
 
 .payment-header {
-    display: grid;
-    grid-template-columns: 80% 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
     background-color: darkblue;
 }
 
 .payment-header-text {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-}
-
-.payment-header-text h1 {
     color: white;
-    font-size: 35px;
-    font-weight: 800;
-}
-
-.payment-header-text h4 {
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.payment-header-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-
 }
 
 .local-mall {
+    padding: 8px 8px 8px 10px;
+    background: white;
     font-size: 50px;
+    font-weight: 700;
+    color: black;
+    border-radius: 50%;
 }
 
 .payment-list {
@@ -146,9 +123,8 @@
     flex-direction: row;
     overflow-y: scroll;
     background-color: darkgray;
+    padding-left: 15px;
     border: 0px solid;
-    padding: 0.5rem;
-    padding-left: 2rem;
 }
 
 .p1 {
@@ -157,19 +133,64 @@
     justify-content: center;
     background-color: white;
     font-size: 14px;
+    margin: 20px;
+    padding: 6px;
+    padding-left: 10px;
     font-weight: 600;
-    margin: 15px;
     border-radius: 30px;
     cursor: pointer;
 }
 
-
 .payment-footer {
-    display: grid;
-    grid-template-rows: 40% 50% 10%;
-    justify-content: left;
-    background-color: darkblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    color: white;
+    padding-left: 10px;
     border: 0.5px solid;
+    background-color: darkblue;
+}
+
+.place-pay {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.sub-total {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-top: 2px solid white;
+    color: red;
+}
+
+.pay {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.pay-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: darkgreen;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 /* home eke popup eke css */
