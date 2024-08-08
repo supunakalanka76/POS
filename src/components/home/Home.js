@@ -15,22 +15,6 @@ function Home() {
     const openPopup = () => setIsOpenPopup(true);
     const closePopup = () => setIsOpenPopup(false);
 
-    
-    const [dropdownVisible, setDropdownVisible] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState('');
-    const categories = ['category1', 'category2', 'category3'];
-
-    const toggleDropdown = () => {
-      setDropdownVisible(!dropdownVisible);
-    };
-
-    const handleCategorySelect = (category) => {
-      setSelectedCategory(category);
-      setDropdownVisible(false);
-    };
-
-
-
   return (
     <div className='Home'>
       <PaymentPopup isOpen={isOpenPopup} isClose={closePopup}>
@@ -191,7 +175,6 @@ function Home() {
 
         <div className='recent'>
           <div className='recent-payment'>
-            
           </div>
         </div>
       </div>
@@ -209,11 +192,22 @@ function Home() {
           </div>
 
           <div className='payment-list'>
-            fguijijok
+          <div>
+            <div className='p1'>Product 1 - 100 x Rs. 100 = Rs. 1000</div>
+            <div className='p1'>Product 2 - 50 x Rs. 200 = Rs. 1000</div>
+            <div className='p1'>Product 3 - 80 x Rs. 300 = Rs. 2400</div>
+            <div className='p1'>Product 4 - 70 x Rs. 400 = Rs. 2800</div>
+            <div className='p1'>Product 5 - 60 x Rs. 500 = Rs. 3000</div>
+            <div className='p1'>Product 6 - 90 x Rs. 600 = Rs. 5400</div>
+            <div className='p1'>Product 7 - 100 x Rs. 700 = Rs. 7000</div>
+            <div className='p1'>Product 8 - 120 x Rs. 800 = Rs. 9600</div>
+            <div className='p1'>Product 9 - 150 x Rs. 900 = Rs. 13500</div>
+            <div className='p1'>Product 10 - 180 x Rs. 1000 = Rs. 18000</div>
+          </div>
           </div>
 
           <div className='payment-footer'>
-            huhijiokplp
+            
           </div>
       </div>
     </div>

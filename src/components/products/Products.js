@@ -1,4 +1,6 @@
 import React from 'react'
+import 'material-icons/iconfont/material-icons.css';
+import './products.css';
 
 function Products() {
   return (
@@ -6,6 +8,6 @@ function Products() {
       
     </div>
   )
-}
 
+}
 export default Products

@@ -108,56 +108,69 @@ function Customers() {
           </div>
         </div>
       </CustomerPopup>
+
     <div className='customers'>
+
       <div className='customers-search'>
-
-        <div className='customers-search-Bar'>
-        <div className='row'>
-        <input type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off'/>
+        <div className='customers-search-bar'>
+          <input type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off' />
         </div>
-        </div>
-      <div className='add-new-btn'>
-        <button className='customers-btn' onClick={openPopup}>New Customer</button>
-      </div>
+        <button className='btn-customers' onClick={openPopup}>+ Add New Customer</button>
       </div>
 
-      <div className='customers-analysis'>
+      <div className='customers-details'>
 
         <div className='customers-box'>
-          <h2>Regular</h2>
-          <span class='material-icons customer-icon'>groups</span>
-          <h3>1046</h3>
+          <div className='customers-box-left'>
+            <h2>Regular</h2>
+            <h3>104</h3>
+          </div>
+          <div className='customers-box-right'>
+            <span className='material-icons customers-icon'>groups</span>
+          </div>
         </div>
 
-        <div className='customers-box'>
-          <h2>Wholesale</h2>
-          <span class='material-icons customer-icon'>store</span>
-          <h3>10</h3>
-        </div>
+          <div className='customers-box'>
+            <div className='customers-box-left'>
+              <h2>Wholesale</h2>
+              <h3>254</h3>
+            </div>
+            <div className='customers-box-right'>
+              <span className='material-icons customers-icon'>store</span>
+            </div>
+          </div>
 
-        <div className='customers-box'>
-          <h2>Retail</h2>
-          <span class='material-icons customer-icon'>storefront</span>
-          <h3>104</h3>
-        </div>
+          <div className='customers-box'>
+            <div className='customers-box-left'>
+              <h2>Retail</h2>
+              <h3>12</h3>
+            </div>
+            <div className='customers-box-right'>
+              <span className='material-icons customers-icon'>storefront</span>
+            </div>
+          </div>
 
-        <div className='customers-box'>
-          <h2>Online</h2>
-          <span class='material-icons customer-icon'>language</span>
-          <h3>107</h3>
-        </div>
+          <div className='customers-box'>
+            <div className='customers-box-left'>
+              <h2>Online</h2>
+              <h3>104</h3>
+            </div>
+            <div className='customers-box-right'>
+              <span className='material-icons customers-icon'>language</span>
+            </div>
+          </div>
       </div>
 
-      <div className='customers-categories'>
-        <p>All</p>
-        <p>Regular</p>
-        <p>Wholesale</p>
-        <p>Retail</p>
-        <p>Online</p>
+      <div className='customers-info'>
+        <div className='customers-filters'>
+          <p>Regular</p>
+          <p>Wholesale</p>
+          <p>Retail</p>
+          <p>Online</p>
         </div>
 
-      <div className='table4'>
-        <table className='customer-table'>
+        <div className='table3'>
+          <table className='customers-table'>
           <thead>
             <th>Customer ID</th>
             <th>Customer Name</th>
@@ -165,7 +178,6 @@ function Customers() {
             <th>Loyality Points</th>
             <th>Status</th>
           </thead>
-
           <tbody>
             <tr>
               <td>C123</td>
@@ -215,11 +227,11 @@ function Customers() {
               <td><button className='view-btn'>status</button></td>
             </tr>
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
-      
     </div>
-    </div>
+  </div>
   )
 }
 
