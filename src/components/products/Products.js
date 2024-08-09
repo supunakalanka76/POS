@@ -25,23 +25,28 @@ function Products() {
           </div>
 
           <div className='product-details'>
-            <h2>Product Name</h2>
-            <h4>Category Name</h4>
-          </div>
+            <div className='product-details-header'>
+              <h2>Product Name</h2>
+              <h4>Category Name</h4>
+            </div>
+            
+            <div className='product-details-tabs'>
+              <span>Description</span>
+              <span>Features</span>
+              <span>Specs</span>
+            </div>
 
-          <div className='product-tabs'>
-            <span>Description</span>
-            <span>Features</span>
-            <span>Specs</span>
-          </div>
-          <p>{products.description}</p>
-          <p className='product-price'>Price: Rs.{products.price}</p>
+            {/* <div className='product-details-p'> */}
+              <p className='product-description'>{products.description}</p>
+              <p className='product-price'>Price: Rs. {products.price}</p>
+            {/* </div> */}
 
-          <div className='product-popup-buttons'>
-            <button className="inquiry-button">Inquiry</button>
-            <button className="remove-button">Remove</button>
-          </div>
+            <div className='product-details-footer'>
+              <button className="inquiry-button">Inquiry</button>
+              <button className="remove-button">Remove</button>
+            </div>
 
+          </div>
         </div>
       </ProductPopup>
 
