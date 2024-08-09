@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.transactions {
+    display: grid;
+    grid-template-rows: 15% 85%;
+    margin: 10px;
+}
+
+.transaction-search {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.transaction-search-bar input {
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 95%;
+    gap: 10px;
+    padding: 10px;
+    padding-left: 1.5rem;
+    background-color: #D9D9D9;
+}
+
+.transaction-info {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.transaction-filters {
+    display: grid;
+    grid-template-columns:65% 35%;
+    border-bottom: 2px solid black;
+}
+
+.transaction-filters-left{
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15% 15%;
+    align-items: center;
+    font-weight: 600;
+}
+
+.transaction-filters-left p {
+    cursor: pointer;
+    font-weight: 600;
+}
+ 
+.transaction-filters-left p:hover {
+    color: blue;
+}
+
+.transaction-filters-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.transaction-dropdown {
+    width: 150px;
+    height: 35px;
+    margin-bottom: 5px;
+}
+
+.transaction-filters-right h5 {
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.table5 {
+    z-index: 2;
+    overflow-y: scroll;
+    height: 460px;
+    margin-top: 20px;
+}
+
+.transaction-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.transaction-table thead th, .transaction-table tbody td {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 35px;
+}
+
+.transaction-table thead th {
+    background-color: darkblue;
+    color: white;
+}
+
+.transaction-table tbody tr:nth-child(even) {
+    background-color: #D9D9D9;
+}
+
+.transaction-table tbody th:nth-child(even) {
+    background-color: #896f6f;
+}
+
+.detail-btn {
+    background: darkorange;
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
