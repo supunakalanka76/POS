@@ -8,7 +8,6 @@ function UserSettings() {
         <Settings/>
       </div>
       <div className='user-content'>
-        div
       </div>
     </div>
   )

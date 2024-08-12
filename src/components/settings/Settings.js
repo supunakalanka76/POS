@@ -17,7 +17,16 @@ function Settings() {
         </div>
 
         <div className='setting-body'>
-          
+          <h2>free</h2>
+          <h2>free</h2>
+          <h2>free</h2>
+          <h2>free</h2>
+          <h2>free</h2>
+          <h2>free</h2>
+          <h2>free</h2>
+          <h2>free</h2>
+          <h2>free</h2>
+          <h2>free</h2>
         </div>
       </div>
     </div>
