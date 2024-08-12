@@ -17,19 +17,7 @@ function Settings() {
         </div>
 
         <div className='setting-body'>
-          <div className='setting-body-title'>
-            <h2>User Profile</h2>
-            <h2>General</h2>
-            <h2>Payment</h2>
-            <h2>Notification</h2>
-            <h2>System</h2>
-            <h2>Support</h2>
-            <h2>user</h2>
-            <h2>general</h2>
-            <h2>payment</h2>
-            <h2>notification</h2>
-            <h2>system</h2>
-          </div>
+          
         </div>
       </div>
     </div>
