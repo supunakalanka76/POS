@@ -39,7 +39,14 @@
     font-weight: 700;
 }
 
-/* .setting-body {
-    padding: 10px;
-    background-color: lightblue;
-} */
+/* User Settings CSS */
+
+.user-settings {
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+.user-content {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
