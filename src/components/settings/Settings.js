@@ -6,29 +6,30 @@ import { Link } from 'react-router-dom'
 function Settings() {
   return (
     <div className='settings'>
-      <div className='setting-navbar'>
-        <div className='setting-navbar-buttons'>
-          <a href="#">User Profile</a>
-          <a href="#">General Settings</a>
-          <a href="#">Payment Settings</a>
-          <a href="#">Notification Settings</a>
-          <a href="#">System Settings</a>
-          <a href="#">Support</a>
-        </div>
 
-        <div className='setting-body'>
-          <h2>free</h2>
-          <h2>free</h2>
-          <h2>free</h2>
-          <h2>free</h2>
-          <h2>free</h2>
-          <h2>free</h2>
-          <h2>free</h2>
-          <h2>free</h2>
-          <h2>free</h2>
-          <h2>free</h2>
-        </div>
-      </div>
+      <Link to="/settings">
+        <h4>User Settings</h4>
+      </Link>
+
+      <Link to="/settings/general-settings">
+        <h4>General Settings</h4>
+      </Link>
+
+      <Link to="/settings/payment-settings">
+        <h4>Payment Settings</h4>
+      </Link>
+
+      <Link to="/settings/notification-settings">
+        <h4>Notification Settings</h4>
+      </Link>
+
+      <Link to="/settings/system-settings">
+        <h4>System Settings</h4>
+      </Link>
+
+      <Link to="/settings/support">
+        <h4>Support</h4>
+      </Link>
     </div>
   )
 }
