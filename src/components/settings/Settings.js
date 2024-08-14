@@ -7,27 +7,27 @@ function Settings() {
   return (
     <div className='settings'>
 
-      <Link to="/settings">
+      <Link to="/settings" className='settings-navbutton'>
         <h4>User Settings</h4>
       </Link>
 
-      <Link to="/settings/general-settings">
+      <Link to="/settings/general-settings" className='settings-navbutton'>
         <h4>General Settings</h4>
       </Link>
 
-      <Link to="/settings/payment-settings">
+      <Link to="/settings/payment-settings" className='settings-navbutton'>
         <h4>Payment Settings</h4>
       </Link>
 
-      <Link to="/settings/notification-settings">
+      <Link to="/settings/notification-settings" className='settings-navbutton'>
         <h4>Notification Settings</h4>
       </Link>
 
-      <Link to="/settings/system-settings">
+      <Link to="/settings/system-settings" className='settings-navbutton'>
         <h4>System Settings</h4>
       </Link>
 
-      <Link to="/settings/support">
+      <Link to="/settings/support" className='settings-navbutton'>
         <h4>Support</h4>
       </Link>
     </div>
