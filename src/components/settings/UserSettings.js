@@ -1,6 +1,7 @@
 import React from 'react'
 import 'material-icons/iconfont/material-icons.css';
 import Settings from './Settings'
+import './Settings.css';
 import user from '../..//images/user.png'
 
 function UserSettings() {
