@@ -1,5 +1,7 @@
 import React from 'react'
 import Settings from './Settings'
+import './Settings.css';
+import 'material-icons/iconfont/material-icons.css';
 
 function GeneralSettings() {
   return (
@@ -78,8 +80,10 @@ function GeneralSettings() {
       </div>
 
       <div className='general-footer'>
-        <button type='submit'>Save Changes</button>
-        <button type='reset'>Reset</button>
+        <div className='general-footer-buttons'>
+          <button className='save-btn'>Save Changes</button>
+          <button className='cancel-btn'>Cancel</button>
+        </div>
       </div>
     </div>
   )
