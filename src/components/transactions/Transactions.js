@@ -28,7 +28,8 @@ function Transactions() {
               <option value='15days'>Past 15 days</option>
               <option value='7days'>Past 7 days</option>
             </select>
-            <h5>17 June 2021 to 15 Sep 2021</h5>
+            {/* date picker */}
+            <input type='date' id='date-picker' class='date-picker' />
           </div>
         </div>
 
