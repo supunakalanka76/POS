@@ -10,7 +10,7 @@ function Sales() {
         <div className='sales-search-bar'>
           <input type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off' />
         </div>
-        <button className='btn-order'>Create Order</button>
+        <button className='btn-order'>+  Create Order</button>
       </div>
 
       <div className='sales-details'>

@@ -82,7 +82,7 @@ function Products() {
             <tbody>
               <tr>
                 <td>12345678</td>
-                <td>Laptop</td>
+                <td>Vodka - AB</td>
                 <td>Rs. 12,000</td>
                 <td>50</td>
                 <td>Available</td>
