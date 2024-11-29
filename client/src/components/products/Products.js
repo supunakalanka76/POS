@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import 'material-icons/iconfont/material-icons.css';
 import './products.css';
 import ProductPopup from './ProductPopup';
@@ -6,7 +7,7 @@ import vodka from '../..//images/vodka.png'
 
 function Products() {
 
-  const products = {
+  const productsDetails = {
     description: 'A refreshing and aromatic spirit made from fermented grape juice, often served with a sweet and tangy flavor.',
     price: '10,500',
   };
@@ -14,6 +15,23 @@ function Products() {
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   const openPopup = () => setIsOpenPopup(true);
   const closePopup = () => setIsOpenPopup(false);
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await axios.get('https://localhost:8080/products');
+        setProducts(res.data);
+      }
+      catch (error) {
+        console.log(error);
+      }
+    }
+    getProducts();
+  },[])
+
+  console.log(products);
 
   return (
     <div className='Products'>
@@ -37,8 +55,8 @@ function Products() {
             </div>
 
             {/* <div className='product-details-p'> */}
-              <p className='product-description'>{products.description}</p>
-              <p className='product-price'>Price: Rs. {products.price}</p>
+              <p className='product-description'>{productsDetails.description}</p>
+              <p className='product-price'>Price: Rs. {productsDetails.price}</p>
             {/* </div> */}
 
             <div className='product-details-footer'>
@@ -80,104 +98,18 @@ function Products() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>12345678</td>
-                <td>Vodka - AB</td>
-                <td>Rs. 12,000</td>
-                <td>50</td>
-                <td>Available</td>
-                <td><button className='view-btn' onClick={openPopup}>view</button></td>
-              </tr>
-
-              <tr>
-                <td>90123456</td>
-                <td>Mobile</td>
-                <td>Rs. 5,000</td>
-                <td>100</td>
-                <td>Available</td>
-                <td><button className='view-btn'>view</button></td>
-              </tr>
-
-              <tr>
-                <td>65748392</td>
-                <td>NVME - 128GB</td>
-                <td>Rs. 2,000</td>
-                <td>20</td>
-                <td>Available</td>
-                <td><button className='view-btn'>view</button></td>
-              </tr>
-
-              <tr>
-                <td>10192873</td>
-                <td>Vodka - AB</td>
-                <td>Rs. 4,800</td>
-                <td>0</td>
-                <td>Unavailable</td>
-                <td><button className='view-btn'>view</button></td>
-              </tr>
-
-              <tr>
-                <td>65748392</td>
-                <td>NVME - 128GB</td>
-                <td>Rs. 2,000</td>
-                <td>20</td>
-                <td>Available</td>
-                <td><button className='view-btn'>view</button></td>
-              </tr>
-
-              <tr>
-                <td>90123456</td>
-                <td>Mobile</td>
-                <td>Rs. 5,000</td>
-                <td>100</td>
-                <td>Available</td>
-                <td><button className='view-btn'>view</button></td>
-              </tr>
-
-              <tr>
-                <td>12345678</td>
-                <td>Laptop</td>
-                <td>Rs. 12,000</td>
-                <td>50</td>
-                <td>Available</td>
-                <td><button className='view-btn'>view</button></td>
-              </tr>
-
-              <tr>
-                <td>65748392</td>
-                <td>NVME - 128GB</td>
-                <td>Rs. 2,000</td>
-                <td>20</td>
-                <td>Available</td>
-                <td><button className='view-btn'>view</button></td>
-              </tr>
-
-              <tr>
-                <td>65748392</td>
-                <td>NVME - 128GB</td>
-                <td>Rs. 2,000</td>
-                <td>20</td>
-                <td>Available</td>
-                <td><button className='view-btn'>view</button></td>
-              </tr>
-
-              <tr>
-                <td>65748392</td>
-                <td>NVME - 128GB</td>
-                <td>Rs. 2,000</td>
-                <td>20</td>
-                <td>Available</td>
-                <td><button className='view-btn'>view</button></td>
-              </tr>
-
-              <tr>
-                <td>65748392</td>
-                <td>NVME - 128GB</td>
-                <td>Rs. 2,000</td>
-                <td>20</td>
-                <td>Available</td>
-                <td><button className='view-btn'>view</button></td>
-              </tr>
+              {
+                products.map((product) => (
+                  <tr key={product.id}>
+                    <td>{product.id}</td>
+                    <td>Vodka - AB</td>
+                    <td>Rs. 12,000</td>
+                    <td>50</td>
+                    <td>Available</td>
+                    <td><button className='view-btn' onClick={openPopup}>view</button></td>
+                  </tr>
+                ))
+              }
             </tbody>
           </table>
         </div>
