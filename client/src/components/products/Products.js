@@ -21,7 +21,7 @@ function Products() {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get('https://localhost:8080/products');
+        const res = await axios.get('http://localhost:8080/products');
         setProducts(res.data);
       }
       catch (error) {
