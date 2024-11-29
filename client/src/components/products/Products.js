@@ -102,9 +102,9 @@ function Products() {
                 products.map((product) => (
                   <tr key={product.id}>
                     <td>{product.id}</td>
-                    <td>Vodka - AB</td>
-                    <td>Rs. 12,000</td>
-                    <td>50</td>
+                    <td>{product.name}</td>
+                    <td>{product.price}</td>
+                    <td>{product.quantity}</td>
                     <td>Available</td>
                     <td><button className='view-btn' onClick={openPopup}>view</button></td>
                   </tr>
