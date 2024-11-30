@@ -1,12 +1,12 @@
-import express from 'express'; //to write backend codes
-import cors from 'cors'; //connect to frontend (to request)
-import mysql from 'mysql'; //connect to database and write sql codes
+import express from 'express'; //express is a js framework to create a object from the express library
+import cors from 'cors'; //cors is a library allows to connect react frontend and express backend
+import mysql from 'mysql'; //connect to the sql database and write sql codes
 
-const app = express();
-app.use(cors()); //connect frontend and backend
-app.use(express.json()); //to exchange data from frontend and backend (node.js)
+const app = express(); //store features of express library
+app.use(cors()); //use the created app object with cors library to connect with the frontend
+app.use(express.json()); //to exchange data from frontend and backend (client <= API <= server <= database || data is flowing as JSON)
 
-//connect backend and database
+//create a connection to the database (database => server)
 const db = mysql.createConnection({
   host : 'localhost',
   user : 'root',
