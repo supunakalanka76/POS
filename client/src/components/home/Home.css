@@ -40,6 +40,32 @@
     background-color: #D9D9D9;
 }
 
+.result-box {
+    position: absolute;
+    margin-top: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: auto;
+    max-height: 200px; /* Optional: Add a max height with scroll */
+    overflow-y: auto;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 250px;
+    margin-left: 20px;
+    z-index: 10;
+}
+  
+.result-box li {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+  
+.result-box li:hover {
+    background-color: #f0f0f0;
+}
+
 .btn-category {
     background-color: blue;
     color: white;
@@ -49,6 +75,28 @@
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.home-product-info {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.home-product-filters {
+    display: grid;
+    grid-template-columns: 12% 15% 15% 15% 15% 15%;
+    border-bottom: 2px solid black;
+}
+
+.home-product-filters p {
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+ 
+.home-product-filters p:hover {
+    color: blue;
 }
 
 .table1 {

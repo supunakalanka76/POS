@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import 'material-icons/iconfont/material-icons.css';
 import './Home.css';
 import PaymentPopup from './PaymentPopup';
@@ -14,6 +15,23 @@ function Home() {
     const [isOpenPopup, setIsOpenPopup] = useState(false);
     const openPopup = () => setIsOpenPopup(true);
     const closePopup = () => setIsOpenPopup(false);
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+      const getProducts = async () => {
+        try {
+          const res = await axios.get('http://localhost:8080/products');
+            setProducts(res.data);
+          }
+        catch (error) {
+          console.log(error);
+        }
+      }
+      getProducts();
+    },[])
+
+  console.log(products);
 
   return (
     <div className='Home'>
@@ -83,94 +101,56 @@ function Home() {
           <div className='home-search-bar'>
             <input type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off' />
           </div>
+          <div className='result-box'>
+            {
+              products.map((product) => (
+                <li key={product.id}>
+                  {product.name}
+                </li>
+              ))
+            }
+          </div>
           <button className='btn-category'>Category</button>
         </div>
 
-        <div className='table1'>
-            <table className='home-table'>
+        <div className='home-product-info'>
+          <div className='home-product-filters'>
+            <p>All</p>
+            <p>Food</p>
+            <p>Drinks</p>
+            <p>Accessories</p>
+            <p>Costumes</p>
+            <p>Electronics</p>
+          </div>
+
+          {/* <div className='table4'>
+          <table className='product-table'>
             <thead>
-            <tr>
-              <th>Product Id</th>
+              <tr>
+              <th>Product ID</th>
               <th>Product Name</th>
-              <th>Stock</th>
-              <th>Unit Price</th>
+              <th>Price</th>
+              <th>Available Quantity</th>
+              <th>Status</th>
               <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Product 1</td>
-              <td>100</td>
-              <td>Rs. 100</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Product 2</td>
-              <td>50</td>
-              <td>Rs. 200</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Product 3</td>
-              <td>100</td>
-              <td>Rs. 100</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Product 4</td>
-              <td>50</td>
-              <td>Rs. 200</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Product 5</td>
-              <td>100</td>
-              <td>Rs. 100</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Product 6</td>
-              <td>50</td>
-              <td>Rs. 200</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Product 7</td>
-              <td>100</td>
-              <td>Rs. 100</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>Product 8</td>
-              <td>50</td>
-              <td>Rs. 200</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>Product 9</td>
-              <td>100</td>
-              <td>Rs. 100</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>Product 10</td>
-              <td>50</td>
-              <td>Rs. 200</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            {/* <!-- Add more rows as needed --> */}
-          </tbody>
-            </table>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                products.map((product) => (
+                  <tr key={product.id}>
+                    <td>{product.id}</td>
+                    <td>{product.name}</td>
+                    <td>{product.price}</td>
+                    <td>{product.quantity}</td>
+                    <td>Available</td>
+                    <td><button className='view-btn' onClick={openPopup}>view</button></td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+          </div> */}
         </div>
       </div>
 
