@@ -102,13 +102,13 @@ function Home() {
             <input type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off' />
           </div>
           <div className='result-box'>
-            {
+            {/* {
               products.map((product) => (
                 <li key={product.id}>
                   {product.name}
                 </li>
               ))
-            }
+            } */}
           </div>
           <button className='btn-category'>Category</button>
         </div>
@@ -153,102 +153,16 @@ function Home() {
           </div> */}
           <div className='home-product-box'>
             <div className='product-box'>
-              <div className='product-box-left'>
-                <h2>Regular</h2>
-                <h3>104</h3>
+              <div className='product-box-header'>
+                <h3>Chicken Burger</h3>
               </div>
-              <div className='product-box-right'>
-                <span className='material-icons customers-icon'>groups</span>
+              <div className='product-box-description'>
+                <p>
+                A chicken burger is a sandwich with a juicy chicken patty, fresh veggies, and sauces, served in a soft bun.</p>
               </div>
-            </div>
-
-            <div className='product-box'>
-              <div className='product-box-left'>
-                <h2>Regular</h2>
-                <h3>104</h3>
-              </div>
-              <div className='product-box-right'>
-                <span className='material-icons customers-icon'>groups</span>
-              </div>
-            </div>
-            
-            <div className='product-box'>
-              <div className='product-box-left'>
-                <h2>Regular</h2>
-                <h3>104</h3>
-              </div>
-              <div className='product-box-right'>
-                <span className='material-icons customers-icon'>groups</span>
-              </div>
-            </div>
-
-            <div className='product-box'>
-              <div className='product-box-left'>
-                <h2>Regular</h2>
-                <h3>104</h3>
-              </div>
-              <div className='product-box-right'>
-                <span className='material-icons customers-icon'>groups</span>
-              </div>
-            </div>
-
-            <div className='product-box'>
-              <div className='product-box-left'>
-                <h2>Regular</h2>
-                <h3>104</h3>
-              </div>
-              <div className='product-box-right'>
-                <span className='material-icons customers-icon'>groups</span>
-              </div>
-            </div>
-            
-            <div className='product-box'>
-              <div className='product-box-left'>
-                <h2>Regular</h2>
-                <h3>104</h3>
-              </div>
-              <div className='product-box-right'>
-                <span className='material-icons customers-icon'>groups</span>
-              </div>
-            </div>
-            
-            <div className='product-box'>
-              <div className='product-box-left'>
-                <h2>Regular</h2>
-                <h3>104</h3>
-              </div>
-              <div className='product-box-right'>
-                <span className='material-icons customers-icon'>groups</span>
-              </div>
-            </div>
-
-            <div className='product-box'>
-              <div className='product-box-left'>
-                <h2>Regular</h2>
-                <h3>104</h3>
-              </div>
-              <div className='product-box-right'>
-                <span className='material-icons customers-icon'>groups</span>
-              </div>
-            </div>
-
-            <div className='product-box'>
-              <div className='product-box-left'>
-                <h2>Regular</h2>
-                <h3>104</h3>
-              </div>
-              <div className='product-box-right'>
-                <span className='material-icons customers-icon'>groups</span>
-              </div>
-            </div>
-
-            <div className='product-box'>
-              <div className='product-box-left'>
-                <h2>Regular</h2>
-                <h3>104</h3>
-              </div>
-              <div className='product-box-right'>
-                <span className='material-icons customers-icon'>groups</span>
+              <div className='product-box-footer'>
+                <h3>LKR 1000</h3>
+                <p>x1</p>
               </div>
             </div>
           </div>
@@ -258,7 +172,7 @@ function Home() {
       <div className='section-B'>
         <div className='payment-header'>
           <div className='payment-header-text'>
-            <h1>Reciept</h1>
+            <h1>CURRENT ORDER</h1>
             <h4>Company Name</h4>
           </div>
 
@@ -267,34 +181,53 @@ function Home() {
           </div>
         </div>
 
-        <div className='payment-list'>
-          <div>
-            <div className='p1'>Product 1 - 100 x Rs. 100 = Rs. 1000</div>
-            <div className='p1'>Product 2 - 50 x Rs. 200 = Rs. 1000</div>
-            <div className='p1'>Product 3 - 80 x Rs. 300 = Rs. 2400</div>
-            <div className='p1'>Product 4 - 70 x Rs. 400 = Rs. 2800</div>
-            <div className='p1'>Product 5 - 60 x Rs. 500 = Rs. 3000</div>
-            <div className='p1'>Product 6 - 90 x Rs. 600 = Rs. 5400</div>
-            <div className='p1'>Product 7 - 100 x Rs. 700 = Rs. 7000</div>
-            <div className='p1'>Product 8 - 120 x Rs. 800 = Rs. 9600</div>
-            <div className='p1'>Product 9 - 150 x Rs. 900 = Rs. 13500</div>
-            <div className='p1'>Product 10 - 180 x Rs. 1000 = Rs. 18000</div>
+        <div className='product-list'>
+          <div className='product-list-details'>
+            <div className='product-name'>
+              <p>Chicken Burger</p>
+            </div>
+            <div className='product-quantity'>
+              <button className='material-icons-outlined remove-icon'>remove</button>
+              <h5>1</h5>
+              <button className='material-icons-outlined plus-icon'>add</button>
+            </div>
+            <div className='product-price'>
+              <p>750LKR</p>
+            </div>
+            <div className='product-icon-percentage'>
+              <span className='material-icons-outlined percent-icon'>percent</span>
+            </div>
+            <div className='product-icon-delete'>
+              <span className='material-icons-outlined delete-icon'>delete</span>
+            </div>
           </div>
         </div>
 
         <div className='payment-footer'>
           <div className='place-pay'>
-            <h3>Total:  Rs. </h3>
-            <h3>Tax:  Rs. </h3>
-            <h3>Discount:  Rs. </h3>
+            <div className='total-pay'>
+              <h3>Total:</h3>
+              <h4>750 LKR</h4>
+            </div>
+            <div className='discount-pay'>
+              <h3>Discount:</h3>
+              <h4>0 LKR</h4>
+            </div>
+            <div className='tax-pay'>
+              <h3>Tax:</h3>
+              <h4>0 LKR</h4>
+            </div>
           </div>
 
           <div className='sub-total'>
-            <h3>Sub Total: Rs. </h3>
+            <div className='sub-total-pay'>
+              <h3>Sub Total:</h3>
+              <h4>750 LKR</h4>
+            </div>
           </div>
 
           <div className='pay'>
-            <button className='pay-btn' onClick={openPopup}>Payment</button>
+            <button className='pay-btn' onClick={openPopup}>Place Order</button>
           </div>
 
         </div>
