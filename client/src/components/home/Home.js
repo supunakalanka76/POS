@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import 'material-icons/iconfont/material-icons.css';
 import './Home.css';
 import PaymentPopup from './PaymentPopup';
@@ -14,6 +15,23 @@ function Home() {
     const [isOpenPopup, setIsOpenPopup] = useState(false);
     const openPopup = () => setIsOpenPopup(true);
     const closePopup = () => setIsOpenPopup(false);
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+      const getProducts = async () => {
+        try {
+          const res = await axios.get('http://localhost:8080/products');
+            setProducts(res.data);
+          }
+        catch (error) {
+          console.log(error);
+        }
+      }
+      getProducts();
+    },[])
+
+  console.log(products);
 
   return (
     <div className='Home'>
@@ -83,101 +101,78 @@ function Home() {
           <div className='home-search-bar'>
             <input type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off' />
           </div>
+          <div className='result-box'>
+            {/* {
+              products.map((product) => (
+                <li key={product.id}>
+                  {product.name}
+                </li>
+              ))
+            } */}
+          </div>
           <button className='btn-category'>Category</button>
         </div>
 
-        <div className='table1'>
-            <table className='home-table'>
+        <div className='home-product-info'>
+          <div className='home-product-filters'>
+            <p>All</p>
+            <p>Food</p>
+            <p>Drinks</p>
+            <p>Accessories</p>
+            <p>Costumes</p>
+            <p>Electronics</p>
+          </div>
+
+          {/* <div className='table4'>
+          <table className='product-table'>
             <thead>
-            <tr>
-              <th>Product Id</th>
+              <tr>
+              <th>Product ID</th>
               <th>Product Name</th>
-              <th>Stock</th>
-              <th>Unit Price</th>
+              <th>Price</th>
+              <th>Available Quantity</th>
+              <th>Status</th>
               <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Product 1</td>
-              <td>100</td>
-              <td>Rs. 100</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Product 2</td>
-              <td>50</td>
-              <td>Rs. 200</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Product 3</td>
-              <td>100</td>
-              <td>Rs. 100</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Product 4</td>
-              <td>50</td>
-              <td>Rs. 200</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Product 5</td>
-              <td>100</td>
-              <td>Rs. 100</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Product 6</td>
-              <td>50</td>
-              <td>Rs. 200</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Product 7</td>
-              <td>100</td>
-              <td>Rs. 100</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>Product 8</td>
-              <td>50</td>
-              <td>Rs. 200</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>Product 9</td>
-              <td>100</td>
-              <td>Rs. 100</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>Product 10</td>
-              <td>50</td>
-              <td>Rs. 200</td>
-              <td><span className="material-icons delete-btn">delete</span></td>
-            </tr>
-            {/* <!-- Add more rows as needed --> */}
-          </tbody>
-            </table>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                products.map((product) => (
+                  <tr key={product.id}>
+                    <td>{product.id}</td>
+                    <td>{product.name}</td>
+                    <td>{product.price}</td>
+                    <td>{product.quantity}</td>
+                    <td>Available</td>
+                    <td><button className='view-btn' onClick={openPopup}>view</button></td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+          </div> */}
+          <div className='home-product-box'>
+            <div className='product-box'>
+              <div className='product-box-header'>
+                <h3>Chicken Burger</h3>
+              </div>
+              <div className='product-box-description'>
+                <p>
+                A chicken burger is a sandwich with a juicy chicken patty, fresh veggies, and sauces, served in a soft bun.</p>
+              </div>
+              <div className='product-box-footer'>
+                <h3>LKR 1000</h3>
+                <p>x1</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className='section-B'>
         <div className='payment-header'>
           <div className='payment-header-text'>
-            <h1>Reciept</h1>
+            <h1>CURRENT ORDER</h1>
             <h4>Company Name</h4>
           </div>
 
@@ -186,34 +181,53 @@ function Home() {
           </div>
         </div>
 
-        <div className='payment-list'>
-          <div>
-            <div className='p1'>Product 1 - 100 x Rs. 100 = Rs. 1000</div>
-            <div className='p1'>Product 2 - 50 x Rs. 200 = Rs. 1000</div>
-            <div className='p1'>Product 3 - 80 x Rs. 300 = Rs. 2400</div>
-            <div className='p1'>Product 4 - 70 x Rs. 400 = Rs. 2800</div>
-            <div className='p1'>Product 5 - 60 x Rs. 500 = Rs. 3000</div>
-            <div className='p1'>Product 6 - 90 x Rs. 600 = Rs. 5400</div>
-            <div className='p1'>Product 7 - 100 x Rs. 700 = Rs. 7000</div>
-            <div className='p1'>Product 8 - 120 x Rs. 800 = Rs. 9600</div>
-            <div className='p1'>Product 9 - 150 x Rs. 900 = Rs. 13500</div>
-            <div className='p1'>Product 10 - 180 x Rs. 1000 = Rs. 18000</div>
+        <div className='product-list'>
+          <div className='product-list-details'>
+            <div className='product-name'>
+              <p>Chicken Burger</p>
+            </div>
+            <div className='product-quantity'>
+              <button className='material-icons-outlined remove-icon'>remove</button>
+              <h5>1</h5>
+              <button className='material-icons-outlined plus-icon'>add</button>
+            </div>
+            <div className='product-price'>
+              <p>750LKR</p>
+            </div>
+            <div className='product-icon-percentage'>
+              <span className='material-icons-outlined percent-icon'>percent</span>
+            </div>
+            <div className='product-icon-delete'>
+              <span className='material-icons-outlined delete-icon'>delete</span>
+            </div>
           </div>
         </div>
 
         <div className='payment-footer'>
           <div className='place-pay'>
-            <h3>Total:  Rs. </h3>
-            <h3>Tax:  Rs. </h3>
-            <h3>Discount:  Rs. </h3>
+            <div className='total-pay'>
+              <h3>Total:</h3>
+              <h4>750 LKR</h4>
+            </div>
+            <div className='discount-pay'>
+              <h3>Discount:</h3>
+              <h4>0 LKR</h4>
+            </div>
+            <div className='tax-pay'>
+              <h3>Tax:</h3>
+              <h4>0 LKR</h4>
+            </div>
           </div>
 
           <div className='sub-total'>
-            <h3>Sub Total: Rs. </h3>
+            <div className='sub-total-pay'>
+              <h3>Sub Total:</h3>
+              <h4>750 LKR</h4>
+            </div>
           </div>
 
           <div className='pay'>
-            <button className='pay-btn' onClick={openPopup}>Payment</button>
+            <button className='pay-btn' onClick={openPopup}>Place Order</button>
           </div>
 
         </div>
