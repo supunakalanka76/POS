@@ -151,6 +151,107 @@ function Home() {
             </tbody>
           </table>
           </div> */}
+          <div className='home-product-box'>
+            <div className='product-box'>
+              <div className='product-box-left'>
+                <h2>Regular</h2>
+                <h3>104</h3>
+              </div>
+              <div className='product-box-right'>
+                <span className='material-icons customers-icon'>groups</span>
+              </div>
+            </div>
+
+            <div className='product-box'>
+              <div className='product-box-left'>
+                <h2>Regular</h2>
+                <h3>104</h3>
+              </div>
+              <div className='product-box-right'>
+                <span className='material-icons customers-icon'>groups</span>
+              </div>
+            </div>
+            
+            <div className='product-box'>
+              <div className='product-box-left'>
+                <h2>Regular</h2>
+                <h3>104</h3>
+              </div>
+              <div className='product-box-right'>
+                <span className='material-icons customers-icon'>groups</span>
+              </div>
+            </div>
+
+            <div className='product-box'>
+              <div className='product-box-left'>
+                <h2>Regular</h2>
+                <h3>104</h3>
+              </div>
+              <div className='product-box-right'>
+                <span className='material-icons customers-icon'>groups</span>
+              </div>
+            </div>
+
+            <div className='product-box'>
+              <div className='product-box-left'>
+                <h2>Regular</h2>
+                <h3>104</h3>
+              </div>
+              <div className='product-box-right'>
+                <span className='material-icons customers-icon'>groups</span>
+              </div>
+            </div>
+            
+            <div className='product-box'>
+              <div className='product-box-left'>
+                <h2>Regular</h2>
+                <h3>104</h3>
+              </div>
+              <div className='product-box-right'>
+                <span className='material-icons customers-icon'>groups</span>
+              </div>
+            </div>
+            
+            <div className='product-box'>
+              <div className='product-box-left'>
+                <h2>Regular</h2>
+                <h3>104</h3>
+              </div>
+              <div className='product-box-right'>
+                <span className='material-icons customers-icon'>groups</span>
+              </div>
+            </div>
+
+            <div className='product-box'>
+              <div className='product-box-left'>
+                <h2>Regular</h2>
+                <h3>104</h3>
+              </div>
+              <div className='product-box-right'>
+                <span className='material-icons customers-icon'>groups</span>
+              </div>
+            </div>
+
+            <div className='product-box'>
+              <div className='product-box-left'>
+                <h2>Regular</h2>
+                <h3>104</h3>
+              </div>
+              <div className='product-box-right'>
+                <span className='material-icons customers-icon'>groups</span>
+              </div>
+            </div>
+
+            <div className='product-box'>
+              <div className='product-box-left'>
+                <h2>Regular</h2>
+                <h3>104</h3>
+              </div>
+              <div className='product-box-right'>
+                <span className='material-icons customers-icon'>groups</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
