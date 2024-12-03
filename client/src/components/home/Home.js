@@ -18,6 +18,20 @@ function Home() {
 
     const [products, setProducts] = useState([]);
 
+    const [searchItem, setSearchItem] = useState('');
+
+    const filteredProducts = products.filter(
+      product => product.name.toLowerCase().includes(searchItem.toLowerCase())
+    );
+
+    const [addedProducts, setAddedProducts] = useState([]);
+    const addedProductsToReciept = (product) => {
+      setAddedProducts(previousProducts => [
+        ...previousProducts, {...product, quantity: 1, price: product.price}
+      ]);
+      setSearchItem('');
+    }
+
     useEffect(() => {
       const getProducts = async () => {
         try {
@@ -32,6 +46,8 @@ function Home() {
     },[])
 
   console.log(products);
+
+
 
   return (
     <div className='Home'>
@@ -99,11 +115,17 @@ function Home() {
       <div className='section-A'>
         <div className='home-search'>
           <div className='home-search-bar'>
-            <input type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off' />
+            <input 
+              onChange = {
+                (e) => setSearchItem (e.target.value)
+              }
+              value={searchItem}
+              type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off' 
+            />
           </div>
           <div className='result-box'>
             {/* {
-              products.map((product) => (
+              filteredProducts.map((product) => (
                 <li key={product.id}>
                   {product.name}
                 </li>
@@ -123,48 +145,21 @@ function Home() {
             <p>Electronics</p>
           </div>
 
-          {/* <div className='table4'>
-          <table className='product-table'>
-            <thead>
-              <tr>
-              <th>Product ID</th>
-              <th>Product Name</th>
-              <th>Price</th>
-              <th>Available Quantity</th>
-              <th>Status</th>
-              <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                products.map((product) => (
-                  <tr key={product.id}>
-                    <td>{product.id}</td>
-                    <td>{product.name}</td>
-                    <td>{product.price}</td>
-                    <td>{product.quantity}</td>
-                    <td>Available</td>
-                    <td><button className='view-btn' onClick={openPopup}>view</button></td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
-          </div> */}
           <div className='home-product-box'>
-            <div className='product-box'>
-              <div className='product-box-header'>
-                <h3>Chicken Burger</h3>
+            { filteredProducts.map ((product) => (
+              <div onClick={() => addedProductsToReciept(product)} className='product-box'>
+                <div className='product-box-header'>
+                  <h3>{product.name}</h3>
+                </div>
+                <div className='product-box-description'>
+                  <p>{product.description}</p>
+                </div>
+                <div className='product-box-footer'>
+                  <h3>{product.price}</h3>
+                  <p>x{product.quantity}</p>
+                </div>
               </div>
-              <div className='product-box-description'>
-                <p>
-                A chicken burger is a sandwich with a juicy chicken patty, fresh veggies, and sauces, served in a soft bun.</p>
-              </div>
-              <div className='product-box-footer'>
-                <h3>LKR 1000</h3>
-                <p>x1</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -182,25 +177,28 @@ function Home() {
         </div>
 
         <div className='product-list'>
-          <div className='product-list-details'>
-            <div className='product-name'>
-              <p>Chicken Burger</p>
+          {addedProducts.map ((product) => (
+            <div className='product-list-details'>
+              <div className='product-name'>
+                <p>{product.name}</p>
+              </div>
+              <div className='product-quantity'>
+                <button className='material-icons-outlined remove-icon'>remove</button>
+                <h5>1</h5>
+                <button className='material-icons-outlined plus-icon'>add</button>
+              </div>
+              <div className='product-price'>
+                <p>{product.price}LKR</p>
+              </div>
+              <div className='product-icon-percentage'>
+                <span className='material-icons-outlined percent-icon'>percent</span>
+              </div>
+              <div className='product-icon-delete'>
+                <span className='material-icons-outlined delete-icon'>delete</span>
+              </div>
             </div>
-            <div className='product-quantity'>
-              <button className='material-icons-outlined remove-icon'>remove</button>
-              <h5>1</h5>
-              <button className='material-icons-outlined plus-icon'>add</button>
-            </div>
-            <div className='product-price'>
-              <p>750LKR</p>
-            </div>
-            <div className='product-icon-percentage'>
-              <span className='material-icons-outlined percent-icon'>percent</span>
-            </div>
-            <div className='product-icon-delete'>
-              <span className='material-icons-outlined delete-icon'>delete</span>
-            </div>
-          </div>
+          ))}
+
         </div>
 
         <div className='payment-footer'>
