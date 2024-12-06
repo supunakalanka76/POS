@@ -25,11 +25,40 @@ function Home() {
     );
 
     const [addedProducts, setAddedProducts] = useState([]);
+    const [total, setTotal] = useState(0);
+
     const addedProductsToReciept = (product) => {
+      product.quantity -= 1;
+      setTotal(total + product.price);
       setAddedProducts(previousProducts => [
         ...previousProducts, {...product, quantity: 1, price: product.price}
       ]);
       setSearchItem('');
+    }
+
+    const handleQuantity = (index, action) => {
+      const updatedQuantity = [...addedProducts];
+      if (action === 'add') {
+        updatedQuantity[index].quantity += 1;
+        const addedId = addedProducts[index].id - 1;
+        products[addedId].quantity -= 1;
+        // const rawTotal = updatedQuantity[index].quantity * updatedQuantity[index].price;
+        setTotal(total + updatedQuantity[index].price);
+        if (products[addedId].quantity < 1) {
+          alert ('Out of Stock');
+          document.querySelector('.plus-icon').disabled = true;
+        }
+      }
+      else if (action === 'subtract' && updatedQuantity[index].quantity > 1) {
+        updatedQuantity[index].quantity -= 1;
+        const addedId = addedProducts[index].id - 1;
+        products[addedId].quantity += 1;
+        setTotal(total - updatedQuantity[index].price);
+      }
+      setAddedProducts(updatedQuantity);
+      setProducts(previousProducts => [
+       ...previousProducts
+      ]);
     }
 
     useEffect(() => {
@@ -177,27 +206,30 @@ function Home() {
         </div>
 
         <div className='product-list'>
-          {addedProducts.map ((product) => (
-            <div className='product-list-details'>
-              <div className='product-name'>
-                <p>{product.name}</p>
+          
+          {
+            addedProducts.map ((product, index) => (
+              <div key={index} className='product-list-details'>
+                <div className='product-name'>
+                  <p>{product.name}</p>
+                </div>
+                <div className='product-quantity'>
+                  <button onClick={() => handleQuantity (index, 'subtract')} className='material-icons-outlined remove-icon'>remove</button>
+                  <h5>{product.quantity}</h5>
+                  <button onClick={() => handleQuantity (index, 'add')} className='material-icons-outlined plus-icon'>add</button>
+                </div>
+                <div className='product-price'>
+                  <p>{product.price * product.quantity}LKR</p>
+                </div>
+                <div className='product-icon-percentage'>
+                  <span className='material-icons-outlined percent-icon'>percent</span>
+                </div>
+                <div className='product-icon-delete'>
+                  <span className='material-icons-outlined delete-icon'>delete</span>
+                </div>
               </div>
-              <div className='product-quantity'>
-                <button className='material-icons-outlined remove-icon'>remove</button>
-                <h5>1</h5>
-                <button className='material-icons-outlined plus-icon'>add</button>
-              </div>
-              <div className='product-price'>
-                <p>{product.price}LKR</p>
-              </div>
-              <div className='product-icon-percentage'>
-                <span className='material-icons-outlined percent-icon'>percent</span>
-              </div>
-              <div className='product-icon-delete'>
-                <span className='material-icons-outlined delete-icon'>delete</span>
-              </div>
-            </div>
-          ))}
+            ))
+          }
 
         </div>
 
@@ -205,7 +237,7 @@ function Home() {
           <div className='place-pay'>
             <div className='total-pay'>
               <h3>Total:</h3>
-              <h4>750 LKR</h4>
+              <h4>{total} LKR</h4>
             </div>
             <div className='discount-pay'>
               <h3>Discount:</h3>
@@ -220,7 +252,7 @@ function Home() {
           <div className='sub-total'>
             <div className='sub-total-pay'>
               <h3>Sub Total:</h3>
-              <h4>750 LKR</h4>
+              <h4>{total} LKR</h4>
             </div>
           </div>
 

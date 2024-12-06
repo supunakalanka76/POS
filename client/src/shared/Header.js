@@ -15,7 +15,7 @@ function Header() {
       <div className='header-info'>
 
         <div className='income'>
-            <p>Today's Income: <span className='value'>Rs. 10,000</span></p>
+            <p>Today's Income: <span className='value'>Rs. 100,000</span></p>
         </div>
 
         <div className='notification'>
