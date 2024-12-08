@@ -3,6 +3,7 @@ import axios from 'axios';
 import 'material-icons/iconfont/material-icons.css';
 import './Home.css';
 import PaymentPopup from './PaymentPopup';
+import DiscountPopup from './DiscountPopup';
 
 function Home() {
 
@@ -15,6 +16,10 @@ function Home() {
     const [isOpenPopup, setIsOpenPopup] = useState(false);
     const openPopup = () => setIsOpenPopup(true);
     const closePopup = () => setIsOpenPopup(false);
+
+    const [isOpenDiscountPopup, setIsOpenDiscountPopup] = useState(false);
+    const openDiscountPopup = () => setIsOpenDiscountPopup(true);
+    const closeDiscountPopup = () => setIsOpenDiscountPopup(false);
 
     const [products, setProducts] = useState([]);
 
@@ -46,7 +51,6 @@ function Home() {
         setTotal(total + updatedQuantity[index].price);
         if (products[addedId].quantity < 1) {
           alert ('Out of Stock');
-          document.querySelector('.plus-icon').disabled = true;
         }
       }
       else if (action === 'subtract' && updatedQuantity[index].quantity > 1) {
@@ -140,6 +144,34 @@ function Home() {
           </div>
         </div>
       </PaymentPopup>
+
+      <DiscountPopup disOpen={isOpenDiscountPopup} disClose={closeDiscountPopup}>
+        <div className='discount-popup-content'>
+          <div className='discount-popup-content-header'>
+            <h3>Apply Discount</h3>
+          </div>
+
+          <div className='discount-details'>
+            <div className='discount-type'>
+              <label>Discount Type:</label>
+              <input type='radio' id='percentage' name='discountType' value='percentage' />
+              <label for='percentage'>Percentage</label>
+              <input type='radio' id='amount' name='discountType' value='amount' />
+              <label for='amount'>Amount</label>
+            </div>
+            <div className='discount-amount'>
+              <label>Discount (%):</label>
+              <input type='text' placeholder='Discount Amount' />
+            </div>
+          </div>
+
+          <div className='discount-buttons'>
+            <button className='cancel-btn'>Cancel</button>
+            <button className='done-btn'>Apply</button>
+          </div>
+        </div>
+      </DiscountPopup>
+
     <div className='home-section'>
       <div className='section-A'>
         <div className='home-search'>
@@ -222,7 +254,7 @@ function Home() {
                   <p>{product.price * product.quantity}LKR</p>
                 </div>
                 <div className='product-icon-percentage'>
-                  <span className='material-icons-outlined percent-icon'>percent</span>
+                  <span onClick={openDiscountPopup} className='material-icons-outlined percent-icon'>percent</span>
                 </div>
                 <div className='product-icon-delete'>
                   <span className='material-icons-outlined delete-icon'>delete</span>
