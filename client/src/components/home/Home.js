@@ -65,6 +65,12 @@ function Home() {
       ]);
     }
 
+    const [discount, setDiscount] = useState(0);
+
+    const handleDiscount = () => {
+      closeDiscountPopup();
+    }
+
     useEffect(() => {
       const getProducts = async () => {
         try {
@@ -78,7 +84,7 @@ function Home() {
       getProducts();
     },[])
 
-  console.log(products);
+
 
 
 
@@ -161,13 +167,13 @@ function Home() {
             </div>
             <div className='discount-amount'>
               <label>Discount (%):</label>
-              <input type='text' placeholder='Discount Amount' />
+              <input onChange={(e) => setDiscount (e.target.value)} type='number' placeholder='Discount Amount' />
             </div>
           </div>
 
           <div className='discount-buttons'>
             <button className='cancel-btn'>Cancel</button>
-            <button className='done-btn'>Apply</button>
+            <button onClick={(index) => handleDiscount(index)} className='done-btn' type='submit'>Apply</button>
           </div>
         </div>
       </DiscountPopup>
@@ -208,7 +214,7 @@ function Home() {
 
           <div className='home-product-box'>
             { filteredProducts.map ((product) => (
-              <div onClick={() => addedProductsToReciept(product)} className='product-box'>
+              <div key={product.id} onClick={() => addedProductsToReciept(product)} className='product-box'>
                 <div className='product-box-header'>
                   <h3>{product.name}</h3>
                 </div>
@@ -251,7 +257,8 @@ function Home() {
                   <button onClick={() => handleQuantity (index, 'add')} className='material-icons-outlined plus-icon'>add</button>
                 </div>
                 <div className='product-price'>
-                  <p>{product.price * product.quantity}LKR</p>
+                  {/* <p className='price'>{product.price * product.quantity}LKR</p> */}
+                  <p>{(product.price * product.quantity) - (discount * product.quantity)}LKR</p>
                 </div>
                 <div className='product-icon-percentage'>
                   <span onClick={openDiscountPopup} className='material-icons-outlined percent-icon'>percent</span>
