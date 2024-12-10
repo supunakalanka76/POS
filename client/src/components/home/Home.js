@@ -222,7 +222,7 @@ function Home() {
                   <p>{product.description}</p>
                 </div>
                 <div className='product-box-footer'>
-                  <h3>{product.price}</h3>
+                  <h3>{product.price} LKR</h3>
                   <p>x{product.quantity}</p>
                 </div>
               </div>
