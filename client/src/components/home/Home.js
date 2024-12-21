@@ -3,6 +3,7 @@ import axios from 'axios';
 import 'material-icons/iconfont/material-icons.css';
 import './Home.css';
 import PaymentPopup from './PaymentPopup';
+import DiscountPopup from './DiscountPopup';
 
 function Home() {
 
@@ -16,7 +17,59 @@ function Home() {
     const openPopup = () => setIsOpenPopup(true);
     const closePopup = () => setIsOpenPopup(false);
 
+    const [isOpenDiscountPopup, setIsOpenDiscountPopup] = useState(false);
+    const openDiscountPopup = () => setIsOpenDiscountPopup(true);
+    const closeDiscountPopup = () => setIsOpenDiscountPopup(false);
+
     const [products, setProducts] = useState([]);
+
+    const [searchItem, setSearchItem] = useState('');
+
+    const filteredProducts = products.filter(
+      product => product.name.toLowerCase().includes(searchItem.toLowerCase())
+    );
+
+    const [addedProducts, setAddedProducts] = useState([]);
+    const [total, setTotal] = useState(0);
+
+    const addedProductsToReciept = (product) => {
+      product.quantity -= 1;
+      setTotal(total + product.price);
+      setAddedProducts(previousProducts => [
+        ...previousProducts, {...product, quantity: 1, price: product.price}
+      ]);
+      setSearchItem('');
+    }
+
+    const handleQuantity = (index, action) => {
+      const updatedQuantity = [...addedProducts];
+      if (action === 'add') {
+        updatedQuantity[index].quantity += 1;
+        const addedId = addedProducts[index].id - 1;
+        products[addedId].quantity -= 1;
+        // const rawTotal = updatedQuantity[index].quantity * updatedQuantity[index].price;
+        setTotal(total + updatedQuantity[index].price);
+        if (products[addedId].quantity < 1) {
+          alert ('Out of Stock');
+        }
+      }
+      else if (action === 'subtract' && updatedQuantity[index].quantity > 1) {
+        updatedQuantity[index].quantity -= 1;
+        const addedId = addedProducts[index].id - 1;
+        products[addedId].quantity += 1;
+        setTotal(total - updatedQuantity[index].price);
+      }
+      setAddedProducts(updatedQuantity);
+      setProducts(previousProducts => [
+       ...previousProducts
+      ]);
+    }
+
+    const [discount, setDiscount] = useState(0);
+
+    const handleDiscount = () => {
+      closeDiscountPopup();
+    }
 
     useEffect(() => {
       const getProducts = async () => {
@@ -31,7 +84,9 @@ function Home() {
       getProducts();
     },[])
 
-  console.log(products);
+
+
+
 
   return (
     <div className='Home'>
@@ -95,15 +150,49 @@ function Home() {
           </div>
         </div>
       </PaymentPopup>
+
+      <DiscountPopup disOpen={isOpenDiscountPopup} disClose={closeDiscountPopup}>
+        <div className='discount-popup-content'>
+          <div className='discount-popup-content-header'>
+            <h3>Apply Discount</h3>
+          </div>
+
+          <div className='discount-details'>
+            <div className='discount-type'>
+              <label>Discount Type:</label>
+              <input type='radio' id='percentage' name='discountType' value='percentage' />
+              <label for='percentage'>Percentage</label>
+              <input type='radio' id='amount' name='discountType' value='amount' />
+              <label for='amount'>Amount</label>
+            </div>
+            <div className='discount-amount'>
+              <label>Discount (%):</label>
+              <input onChange={(e) => setDiscount (e.target.value)} type='number' placeholder='Discount Amount' />
+            </div>
+          </div>
+
+          <div className='discount-buttons'>
+            <button className='cancel-btn'>Cancel</button>
+            <button onClick={(index) => handleDiscount(index)} className='done-btn' type='submit'>Apply</button>
+          </div>
+        </div>
+      </DiscountPopup>
+
     <div className='home-section'>
       <div className='section-A'>
         <div className='home-search'>
           <div className='home-search-bar'>
-            <input type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off' />
+            <input 
+              onChange = {
+                (e) => setSearchItem (e.target.value)
+              }
+              value={searchItem}
+              type='text' id='input-box' placeholder='Search Here...' autoCapitalize='off' 
+            />
           </div>
           <div className='result-box'>
             {/* {
-              products.map((product) => (
+              filteredProducts.map((product) => (
                 <li key={product.id}>
                   {product.name}
                 </li>
@@ -123,48 +212,21 @@ function Home() {
             <p>Electronics</p>
           </div>
 
-          {/* <div className='table4'>
-          <table className='product-table'>
-            <thead>
-              <tr>
-              <th>Product ID</th>
-              <th>Product Name</th>
-              <th>Price</th>
-              <th>Available Quantity</th>
-              <th>Status</th>
-              <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                products.map((product) => (
-                  <tr key={product.id}>
-                    <td>{product.id}</td>
-                    <td>{product.name}</td>
-                    <td>{product.price}</td>
-                    <td>{product.quantity}</td>
-                    <td>Available</td>
-                    <td><button className='view-btn' onClick={openPopup}>view</button></td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
-          </div> */}
           <div className='home-product-box'>
-            <div className='product-box'>
-              <div className='product-box-header'>
-                <h3>Chicken Burger</h3>
+            { filteredProducts.map ((product) => (
+              <div key={product.id} onClick={() => addedProductsToReciept(product)} className='product-box'>
+                <div className='product-box-header'>
+                  <h3>{product.name}</h3>
+                </div>
+                <div className='product-box-description'>
+                  <p>{product.description}</p>
+                </div>
+                <div className='product-box-footer'>
+                  <h3>{product.price} LKR</h3>
+                  <p>x{product.quantity}</p>
+                </div>
               </div>
-              <div className='product-box-description'>
-                <p>
-                A chicken burger is a sandwich with a juicy chicken patty, fresh veggies, and sauces, served in a soft bun.</p>
-              </div>
-              <div className='product-box-footer'>
-                <h3>LKR 1000</h3>
-                <p>x1</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -182,32 +244,39 @@ function Home() {
         </div>
 
         <div className='product-list'>
-          <div className='product-list-details'>
-            <div className='product-name'>
-              <p>Chicken Burger</p>
-            </div>
-            <div className='product-quantity'>
-              <button className='material-icons-outlined remove-icon'>remove</button>
-              <h5>1</h5>
-              <button className='material-icons-outlined plus-icon'>add</button>
-            </div>
-            <div className='product-price'>
-              <p>750LKR</p>
-            </div>
-            <div className='product-icon-percentage'>
-              <span className='material-icons-outlined percent-icon'>percent</span>
-            </div>
-            <div className='product-icon-delete'>
-              <span className='material-icons-outlined delete-icon'>delete</span>
-            </div>
-          </div>
+          
+          {
+            addedProducts.map ((product, index) => (
+              <div key={index} className='product-list-details'>
+                <div className='product-name'>
+                  <p>{product.name}</p>
+                </div>
+                <div className='product-quantity'>
+                  <button onClick={() => handleQuantity (index, 'subtract')} className='material-icons-outlined remove-icon'>remove</button>
+                  <h5>{product.quantity}</h5>
+                  <button onClick={() => handleQuantity (index, 'add')} className='material-icons-outlined plus-icon'>add</button>
+                </div>
+                <div className='product-price'>
+                  {/* <p className='price'>{product.price * product.quantity}LKR</p> */}
+                  <p>{(product.price * product.quantity) - (discount * product.quantity)}LKR</p>
+                </div>
+                <div className='product-icon-percentage'>
+                  <span onClick={openDiscountPopup} className='material-icons-outlined percent-icon'>percent</span>
+                </div>
+                <div className='product-icon-delete'>
+                  <span className='material-icons-outlined delete-icon'>delete</span>
+                </div>
+              </div>
+            ))
+          }
+
         </div>
 
         <div className='payment-footer'>
           <div className='place-pay'>
             <div className='total-pay'>
               <h3>Total:</h3>
-              <h4>750 LKR</h4>
+              <h4>{total} LKR</h4>
             </div>
             <div className='discount-pay'>
               <h3>Discount:</h3>
@@ -222,7 +291,7 @@ function Home() {
           <div className='sub-total'>
             <div className='sub-total-pay'>
               <h3>Sub Total:</h3>
-              <h4>750 LKR</h4>
+              <h4>{total} LKR</h4>
             </div>
           </div>
 

@@ -78,7 +78,7 @@
 }
 
 .home-product-info {
-    display: flex;
+    display:flex;
     flex-direction: column;
     padding: 1rem;
     height: 75vh;
@@ -110,19 +110,20 @@
 
 .product-box {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
     gap: 0.5rem;
     background-color: darkblue;
     justify-content: space-between;
     border-radius: 20px;
     padding: 1rem;
-    height: 200px;
+    height: 150px;
+    cursor: pointer;
 }
 
 .product-box-header {
     display: flex;
     align-items: center;
     border-radius: 10px;
+    width: 100%;
 }
 
 .product-box-header h3 {
@@ -133,6 +134,7 @@
 
 .product-box-description {
     display: flex;
+    width: 100%;
 }
 
 .product-box-description p {
@@ -143,7 +145,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     border-radius: 10px;
+    gap: 150px;
     color: white;
 }
 
@@ -253,7 +257,8 @@
 .product-list {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    padding: 5px;
+    overflow: auto;
     background-color: #D9D9D9;
     border: 0px solid;
 }
@@ -543,4 +548,118 @@
 .done-btn {
     background: darkblue;
     color: white;
+}
+
+/* Discount CSS Codes */
+.discount-popup-overlay {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.discount-popup {
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    background-color: white;
+    max-width: 90%;
+    position: relative;
+}
+
+.discount-popup-close {
+    background: none;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 4px 4px 4px 4px;
+    position: absolute;
+    top: 10px;
+    right: 1px;
+    cursor: pointer;
+}
+
+.discount-popup-header {
+    justify-content: center;
+}
+
+.discount-popup-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 350px;
+    margin-top: 10px;
+}
+
+.discount-popup-content {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+  
+.discount-popup-content-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.discount-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.discount-type label {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.discount-type input[type="radio"] {
+    font-size: 16px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.discount-amount input[type="number"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    width: 430px;
+    border: 1px solid #CCC;
+}
+
+.discount-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 15px;
+    gap: 80px;
+}
+  
+.discount-buttons .cancel-btn {
+    background: #CCC;
+}
+  
+.discount-buttons .done-btn {
+    background: darkblue;
+    color: white;
+}
+  
+.discount-buttons button:hover {
+    opacity: 0.9;
 }
