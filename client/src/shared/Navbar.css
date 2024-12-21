@@ -54,6 +54,10 @@
     overflow: auto;
 }
 
+.navbar-header-image {
+    cursor: pointer;
+}
+
 .navbar.ToggleActive {
     width: 100px;
 }
@@ -71,6 +75,7 @@
     padding-bottom: 1rem;
     display: flex;
     align-items: center;
+    cursor: default;
 }
 
 .toggle-icon {
