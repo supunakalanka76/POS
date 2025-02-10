@@ -22,36 +22,30 @@ function App() {
     <Router>
 
       <div className="App">
-      <div className='Navbar'>
-        <Navbar/>
+        <div className='Navbar'>
+          <Navbar/>
         </div>
-
-      <div className='Content'>
-        <Header/>
-
-        <div className='dynamic-content'>
-          
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/sales' element={<Sales/>}/>
-            <Route path='/inventory' element={<Inventory/>}/>
-            <Route path='/products' element={<Products/>}/>
-            <Route path='/customers' element={<Customers/>}/>
-            <Route path='/transactions' element={<Transactions/>}/>
-            <Route path='/reports' element={<Reports/>}/>
-            <Route path='/settings' element={<UserSettings/>}/>
-            <Route path='/settings/general-settings' element={<GeneralSettings/>}/>
-            <Route path='/settings/payment-settings' element={<PaymentSettings/>}/>
-            <Route path='/settings/notification-settings' element={<NotificationSettings/>}/>
-            <Route path='/settings/system-settings' element={<SystemSettings/>}/>
-            <Route path='/settings/support' element={<Support/>}/>
-          </Routes>
+        <div className='Content'>
+          <Header/>
+          <div className='dynamic-content'>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/sales' element={<Sales/>}/>
+              <Route path='/inventory' element={<Inventory/>}/>
+              <Route path='/products' element={<Products/>}/>
+              <Route path='/customers' element={<Customers/>}/>
+              <Route path='/transactions' element={<Transactions/>}/>
+              <Route path='/reports' element={<Reports/>}/>
+              <Route path='/settings' element={<UserSettings/>}/>
+              <Route path='/settings/general-settings' element={<GeneralSettings/>}/>
+              <Route path='/settings/payment-settings' element={<PaymentSettings/>}/>
+              <Route path='/settings/notification-settings' element={<NotificationSettings/>}/>
+              <Route path='/settings/system-settings' element={<SystemSettings/>}/>
+              <Route path='/settings/support' element={<Support/>}/>
+            </Routes>
+          </div>
         </div>
-
       </div>
-      
-
-    </div>
 
     </Router>
     
